@@ -5,7 +5,7 @@ This repository is about mitochondria and mitochondrial DNA (mtDNA). More specif
 
 ## About mitochondria
 Mitochondria are organelles that are found within eukaryotic cells (cells with a nucleus). Within 1 cell, there will be many (usually around 100) mitochondria.\
-They are an essential to more sophisticated organisms such as animals, because respiration occurs in the mitochondria, and respiration performed by mitochondria is much more efficient than anaerobic respiration which is the alternative. Because respiration is so essential mitochondria are found in every type of cell except for red blood cells.\
+They are an essential to more sophisticated organisms such as animals, because respiration occurs in the mitochondria, and respiration performed by mitochondria is much more efficient than anaerobic respiration which is the alternative. Mitochondria produce ATP which is used by other parts of the cell to create energy where needed.\
 Interestingly, much of the mtDNA is stored seperatly from the nucleus. The mitochondria are therfore influenced by 2 sets of DNA which act quite indepentently, nuclear DNA and mtDNA in the mitochondria itself.\
 Mitochondria are believed to have originated from prokaryotic organisms (without a nucleus (e.g. bacteria)) that respired aerobically, and which were living with anaerobic eukaryotic cells in a mutual symbiotic relationship.
 
@@ -19,13 +19,14 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completley inherited from the mother of the person.
 
 ## mtDNA diseases
-Mitochondrial diseases are caused in 2 main ways
+Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA.
 ### Mutation
-The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA mutations occur alot more frequently than nuclear DNA mutations, however most of those mutations neutral (they do not affect the mitochondria positivley or negativley). mtDNA are also prone to being damaged by oxidation.
+The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA mutations occur a lot more frequently than nuclear DNA mutations, however most of those mutations neutral (they do not affect the mitochondria positivley or negativley). mtDNA are also prone to being damaged by oxidation.
 ### Deletion
 The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions.
 
 ## Using circos with mtDNA
+Circos is a tool that creates circular diagrams using a dataset. It is well suited to mtDNA, because mtDNA is already in a loop as mentioned earlier. The diagrams produced by circos are good for showing relationships between large amounts of elements, it also looks nice.
 
 ## Bibliography
 [https://en.wikipedia.org/wiki/Human_mitochondrial_genetics#Location_of_genes](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics#Location_of_genes)\
