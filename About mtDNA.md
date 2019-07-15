@@ -31,5 +31,4 @@ The second way is when sections of mtDNA are deleted. The amount of deletions in
 [https://en.wikipedia.org/wiki/Human_mitochondrial_genetics#Location_of_genes](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics#Location_of_genes)\
 [https://en.wikipedia.org/wiki/Mitochondrial_DNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA)\
 [https://www.embopress.org/doi/10.1002/emmm.201303202](https://www.embopress.org/doi/10.1002/emmm.201303202)\
-[https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub]
-(https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
+[https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
