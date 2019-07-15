@@ -7,7 +7,7 @@ This repository is about mitochondria and mitochondrial DNA (mtDNA). More specif
 Mitochondria are organelles that are found within eukaryotic cells (cells with a nucleus). Within 1 cell, there will be many (usually around 100) mitochondria.\
 They are an essential to more sophisticated organisms such as animals, because respiration occurs in the mitochondria, and respiration performed by mitochondria is much more efficient than anaerobic respiration which is the alternative. Because respiration is so essential mitochondria are found in every type of cell except for red blood cells.\
 Interestingly, much of the mtDNA is stored seperatly from the nucleus. The mitochondria are therfore influenced by 2 sets of DNA which act quite indepentently, nuclear DNA and mtDNA in the mitochondria itself.\
-Mitochondria are believed to have originated from prokaryotic organisms (without a nucleus (e.g. bacteria)) that respired aerobically, and which were living with anaerobic eukaryotic cells in a mutual symbiotic relationship.\
+Mitochondria are believed to have originated from prokaryotic organisms (without a nucleus (e.g. bacteria)) that respired aerobically, and which were living with anaerobic eukaryotic cells in a mutual symbiotic relationship.
 
 ## About mtDNA
 mtDNA is unusual for multiple reasons.\
@@ -16,14 +16,14 @@ A major feature of mtDNA is that it has a much higher mutation rate than nuclear
 There are also multiple whole copies of a mitochondria's mtDNA within it (usually about 6 - 10), they all typically have 
 Another way in which mtDNA is seperate from nuclear DNA is that it does not replicate in time with the phases of the cell cycle, even though mtDNA replication and maintenance is controlled by nuclear DNA.\
 Nuclear DNA is very long and resembles a string, this means that it has to have a way of finishing off the ends of the DNA molecule. Mitochondria get around this problem by having a circular loop of mtDNA, so it has no start or end. Circular DNA is a feature of prokaryotes, which is why mitochondria are thought to have originated from them.\
-Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completley inherited from the mother of the person.\
+Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completley inherited from the mother of the person.
 
 ## mtDNA diseases
 Mitochondrial diseases are caused in 2 main ways
 ### Mutation
-The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA mutations occur alot more frequently than nuclear DNA mutations, however most of those mutations neutral (they do not affect the mitochondria positivley or negativley). mtDNA are also prone to being damaged by oxidation.\
+The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA mutations occur alot more frequently than nuclear DNA mutations, however most of those mutations neutral (they do not affect the mitochondria positivley or negativley). mtDNA are also prone to being damaged by oxidation.
 ### Deletion
-The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions.\
+The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions.
 
 ## Using circos with mtDNA
 
