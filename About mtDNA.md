@@ -19,10 +19,8 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completley inherited from the mother of the person.
 
 ## mtDNA diseases
-Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA.
-### Mutation
-The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA mutations occur a lot more frequently than nuclear DNA mutations, however most of those mutations neutral (they do not affect the mitochondria positivley or negativley). mtDNA are also prone to being damaged by oxidation.
-### Deletion
+Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA. These diseases can also occur at any age, although it is often hereditary and therefore occurs at birth.\
+The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA mutations occur a lot more frequently than nuclear DNA mutations, however most of those mutations neutral (they do not affect the mitochondria positivley or negativley). mtDNA are also prone to being damaged by oxidation.\
 The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions.
 
 ## Using circos with mtDNA
