@@ -1,10 +1,5 @@
 # Mitochondrial DNA (mtDNA)
 
-## About this repository
-This repository is about mitochondria and mitochondrial DNA (mtDNA). More specifically it is about human mitochondrial genetics, and how mtDNA is involved with diseases called mitochondrial disorders.
-
-Move the above section to main Readme.md - CONOR
-
 ## Mitochondria
 Mitochondria are organelles that are found within eukaryotic cells (cells with a nucleus). There are many (usually around 100) mitochondria within a cell.  They are an essential to more sophisticated organisms such as animals, because respiration occurs in the mitochondria, and respiration performed by mitochondria is much more efficient than anaerobic respiration which is the alternative. Mitochondria produce ATP molecules which are used by other parts of the cell to create energy where needed.
 
