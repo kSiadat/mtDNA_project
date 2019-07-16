@@ -1,7 +1,7 @@
 # Mitochondrial DNA (mtDNA)
 
 ## About this repository
-This repository is about mitochondria and mitochondrial DNA (mtDNA). More specifically it is about human mitochondrial genetics, and how mtDNA is involved with diseases called mitochondrial disorders.  
+This repository is about mitochondria and mitochondrial DNA (mtDNA). More specifically it is about human mitochondrial genetics, and how mtDNA is involved with diseases called mitochondrial disorders.
 
 Move the above section to main Readme.md - CONOR
 
@@ -17,9 +17,7 @@ mtDNA is unusual for multiple reasons.  Firstly it is not part of the nuclear DN
 
 A major feature of mtDNA is that it has a much higher mutation rate than nuclear DNA.
 
-There are also multiple whole copies of a mitochondria's mtDNA within it (usually about 6 - 10), they all typically have
-
-Finish sentence - CONOR.
+There are also multiple whole copies of a mitochondria's mtDNA within it (usually about 6 - 10), they all have the ability to exchange mtDNA with each other.
 
 Another way in which mtDNA is distinct from nuclear DNA is that it does not replicate in time with the phases of the cell cycle, even though mtDNA replication and maintenance is controlled by nuclear DNA.
 
@@ -30,7 +28,7 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completely inherited from the mother of the person.
 
 ## mtDNA diseases
-Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA. These diseases can also occur at any age, although it is often hereditary and therefore occurs at birth.
+Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA. These diseases can also occur at any age, although it is often hereditary and therefore occurs at birth. The type and severity the of disease impacts on the prograssion.
 
 Say something about disease progression - CONOR.
 
@@ -38,13 +36,13 @@ The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA
 
 The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions.
 
-amount of mutations is often referred to as "mutation load", or less correctly as "heteroplasmy" - CONOR.
+The amount of mutations is often called 'mutation load', this is different to heteroplasmy. There is a critical mass of mutation load for whether or not negative mutations in the mitochondria will cause disease, which varies with how much the given tissue depends on mitochondria.
 
 ## Using circos with mtDNA
 Circos is a tool that creates circular diagrams programatically using a dataset. It is well suited to mtDNA, because mtDNA is already in a loop as mentioned earlier. The diagrams produced by circos are good for showing relationships between large amounts of elements, it also looks nice.
 
 ## Bibliography
-[https://en.wikipedia.org/wiki/Human_mitochondrial_genetics#Location_of_genes](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics#Location_of_genes)\
+[https://en.wikipedia.org/wiki/Human_mitochondrial_genetics](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics)\
 [https://en.wikipedia.org/wiki/Mitochondrial_DNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA)\
 [https://www.embopress.org/doi/10.1002/emmm.201303202](https://www.embopress.org/doi/10.1002/emmm.201303202)\
 [https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
