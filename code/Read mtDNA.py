@@ -11,7 +11,6 @@ class mtDNA_genome():
         for x in range(len(lines)-1):
             self.genome += lines[x+1]
         self.genome_length = len(self.genome)
-        print(self.genome)
 
     def get_bases(self, start, end):
         def limit(num):
