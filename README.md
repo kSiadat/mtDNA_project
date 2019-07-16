@@ -3,4 +3,4 @@
 ## About this repository
 This repository is about mitochondria and mitochondrial DNA (mtDNA). More specifically it is about human mitochondrial genetics, and how mtDNA is involved with diseases called mitochondrial disorders.
 
-* [Introduction](articles/about_mtDNA.md)
+* [Introduction](articles\about_mtDNA.md)
