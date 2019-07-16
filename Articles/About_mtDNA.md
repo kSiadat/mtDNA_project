@@ -7,7 +7,7 @@ Interestingly, much of the mtDNA is stored separately from the nucleus. The mito
 
 Mitochondria are believed to have originated from prokaryotic organisms (without a nucleus (e.g. bacteria)) that respired aerobically, and which were living with anaerobic eukaryotic cells in a mutual symbiotic relationship. [mtDNA_diseases](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
 
-![Relationship between mtDNA, mitochondria, and cells](https://en.wikipedia.org/wiki/Mitochondrial_DNA#/media/File:Mitochondrial_DNA.lg.jpg)
+![Relationship between mtDNA, mitochondria, and cells](images\cell-mitochondria-mtdna.jpg)
 
 ## mtDNA
 mtDNA is unusual for multiple reasons.  Firstly it is not part of the nuclear DNA kept in the nucleus. Instead it is kept within the mitochondria. This means that it works differently to the way that nuclear DNA works [wiki_mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA). For example base pair encoding used in mtDNA varies slightly from that used in nuclear DNA. [mtDNA_diseases](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
@@ -22,7 +22,7 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 
 Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completely inherited from the mother of the person. [wiki_human_mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics)
 
-![mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA#/media/File:Mitochondrial_DNA_en.svg)
+![mtDNA genome](images\mtdna_genome.png)
 
 ## mtDNA diseases
 Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA [mt-tRNA diseases](https://www.embopress.org/doi/10.1002/emmm.201303202). These diseases can also occur at any age, although it is often hereditary and therefore occurs at birth. The type and severity the of disease impacts on the progression, sometimes the disease gets worse and worse over time, whereas sometimes it appears and then the patient gradually recovers from it (often only partially) [mtDNA_diseases](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub).
