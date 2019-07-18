@@ -1,11 +1,3 @@
-<css>
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-</css>
-
 # Mitochondrial DNA (mtDNA)
 
 ## Mitochondria
