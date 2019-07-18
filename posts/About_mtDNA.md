@@ -7,8 +7,8 @@ Interestingly, much of the [mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_D
 
 Mitochondria are believed to have originated from prokaryotic organisms (without a nucleus (e.g. bacteria)) that respired aerobically, and which were living with anaerobic eukaryotic cells in a mutual symbiotic relationship ([Tuppen et al. (2010)](https://doi.org/10.1016/j.bbabio.2009.09.005)).
 
-<a href = "https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_lg.jpg">
-    <img src = "https://upload.wikimedia.org/wikipedia/commons/1/17/Mitochondrial_DNA_lg.jpg" >
+<a href="https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_lg.jpg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Mitochondrial_DNA_lg.jpg" height="400">
 </a>
 
 ## mtDNA
@@ -24,8 +24,8 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 
 Unlike most DNA where half of the genetic material is inherited from each parent, [mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics) is only ever completely inherited from the mother of the person.
 
-<a href = "https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_and_diseases.svg">
-    <img src = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg" >
+<a href="https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_and_diseases.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg" height="400">
 </a>
 
 ## mtDNA diseases
@@ -40,10 +40,16 @@ The amount of mutations is often called 'mutation load', this is different to he
 ## Using circos with mtDNA
 Circos is a tool that creates circular diagrams programatically using a dataset. It is well suited to mtDNA, because mtDNA is already in a loop as mentioned earlier. The diagrams produced by circos are good for showing relationships between large amounts of elements, it also looks nice.
 
-<!---
+<!--
+Websites
 [wiki_mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA)
 [mtDNA_diseases](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
 [bacterial_plasmids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC413948/?page=8)
 [wiki_human_mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics)
 [mt-tRNA diseases](https://www.embopress.org/doi/10.1002/emmm.201303202)
+-->
+<!--
+Images
+cell-mt-mtDNA https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_lg.jpg
+mtDNA_genome https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_and_diseases.svg
 -->
