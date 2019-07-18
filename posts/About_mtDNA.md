@@ -33,7 +33,7 @@ The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA
 
 The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions. [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005)
 
-The amount of mutations is often called 'mutation load', this is different to heteroplasmy (Conor Lawless). There is a critical mass of mutation load for whether or not negative mutations in the mitochondria will cause disease, which varies with how much the given tissue depends on mitochondria. [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005)
+The amount of mutations is often called 'mutation load', this is different to heteroplasmy, [wiki_telomeres](https://en.wikipedia.org/wiki/Telomere). There is a critical mass of mutation load for whether or not negative mutations in the mitochondria will cause disease, which varies with how much the given tissue depends on mitochondria. [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005)
 
 ## Using circos with mtDNA
 Circos is a tool that creates circular diagrams programatically using a dataset. It is well suited to mtDNA, because mtDNA is already in a loop as mentioned earlier. The diagrams produced by circos are good for showing relationships between large amounts of elements, it also looks nice.
