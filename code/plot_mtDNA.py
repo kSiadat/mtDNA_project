@@ -36,13 +36,18 @@ assert(subSeq(6,3,"elephant")=="phantel")
 assert(subSeq(5,7,"elephant")=="ntelephanteleph")
 assert(subSeq(2,10, "elephant")=="elephantelephanteleph")
 
-path="..\data\mtDNA.fa"
+path1="..\data\mtDNA.fa"
+path2="..\data\mtDNA_random.fa"
 
-file = open(path,"r")
+
+file = open(path2,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
 
+print(lines)
+print(lines[1:])
 genome = "".join(lines[1:])
+print(genome[:100])
 
 """
 bases = list(set(genome))
