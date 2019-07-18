@@ -18,9 +18,7 @@ There are also multiple whole copies of a mitochondria's mtDNA within it (usuall
 
 Another way in which mtDNA is distinct from nuclear DNA is that it does not fully replicate in time with the phases of the cell cycle, even though mtDNA replication and maintenance is controlled by nuclear DNA. The way it works is that there is relaxed replication which is not coupled to chromosome replication, this is the kind that is independent of the cell cycle. Then there is also stringent replication, this is coupled to chromosome replication, meaning it is in time with the phases of the cell cycle [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005). These 2 types of replictaion create an overall effect where mtDNA replicates constantly, but replicates more at certain phases of the cell cycle in order to be ready for cell division [bacterial_plasmids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC413948/?page=8).
 
-Nuclear DNA is very long and resembles a string, this means that it has to have a way of finishing off the ends of the DNA molecule. Mitochondria get around this problem by having a circular loop of mtDNA, so it has no start or end (Conor Lawless). Circular DNA is a feature of prokaryotes, which is why mitochondria are thought to have originated from them.
-
-A REFERENCE FOR END REPLICATION IN PROKARYOTES: https://en.wikipedia.org/wiki/Telomere
+Nuclear DNA is very long and resembles a string, this means that it has to have a way of finishing off the ends of the DNA molecule. Mitochondria get around this problem by having a circular loop of mtDNA, so it has no start or end, [wiki_telomeres] (https://en.wikipedia.org/wiki/Telomere). Circular DNA is a feature of prokaryotes, which is why mitochondria are thought to have originated from them.
 
 Unlike most DNA where half of the genetic material is inherited from each parent, mtDNA is only ever completely inherited from the mother of the person. [wiki_human_mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics)
 
@@ -33,7 +31,7 @@ The first way is When there are certain mutations in mtDNA or nuclear DNA. mtDNA
 
 The second way is when sections of mtDNA are deleted. The amount of deletions in a tissue has the largest effect on diseases, instead of the size of individual deletions. [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005)
 
-The amount of mutations is often called 'mutation load', this is different to heteroplasmy, [wiki_telomeres](https://en.wikipedia.org/wiki/Telomere). There is a critical mass of mutation load for whether or not negative mutations in the mitochondria will cause disease, which varies with how much the given tissue depends on mitochondria. [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005)
+The amount of mutations is often called 'mutation load', this is different to heteroplasmy. There is a critical mass of mutation load for whether or not negative mutations in the mitochondria will cause disease, which varies with how much the given tissue depends on mitochondria. [mtDNA_diseases](https://doi.org/10.1016/j.bbabio.2009.09.005)
 
 ## Using circos with mtDNA
 Circos is a tool that creates circular diagrams programatically using a dataset. It is well suited to mtDNA, because mtDNA is already in a loop as mentioned earlier. The diagrams produced by circos are good for showing relationships between large amounts of elements, it also looks nice.
