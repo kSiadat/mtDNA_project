@@ -7,11 +7,9 @@ Interestingly, much of the [mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_D
 
 Mitochondria are believed to have originated from prokaryotic organisms (without a nucleus (e.g. bacteria)) that respired aerobically, and which were living with anaerobic eukaryotic cells in a mutual symbiotic relationship ([Tuppen et al. (2010)](https://doi.org/10.1016/j.bbabio.2009.09.005)).
 
-<a href = "https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_lg.jpg"> <img>src="https://upload.wikimedia.org/wikipedia/commons/1/17/Mitochondrial_DNA_lg.jpg"</img> </a>
-
-<!---
-![Relationship between mtDNA, mitochondria, and cells](https://upload.wikimedia.org/wikipedia/commons/1/17/Mitochondrial_DNA_lg.jpg)
--->
+<a href = "https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_lg.jpg">
+    <img src = "https://upload.wikimedia.org/wikipedia/commons/1/17/Mitochondrial_DNA_lg.jpg" >
+</a>
 
 ## mtDNA
 mtDNA is unusual for multiple reasons.  Firstly, [mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA) is not part of the nuclear DNA kept in the nucleus. Instead it is kept within the mitochondria. This means that it works differently to the way that nuclear DNA works . For example base pair encoding used in mtDNA varies slightly from that used in nuclear DNA. ([Tuppen et al. (2010)](https://doi.org/10.1016/j.bbabio.2009.09.005)).
@@ -26,11 +24,9 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 
 Unlike most DNA where half of the genetic material is inherited from each parent, [mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics) is only ever completely inherited from the mother of the person.
 
-<!---
-<a href = "https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_lg.jpg"> <img>src="https://upload.wikimedia.org/wikipedia/commons/1/17/Mitochondrial_DNA_lg.jpg"</img> </a>
--->
-
-![mtDNA genome](https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg)
+<a href = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg">
+    <img src = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg" >
+</a>
 
 ## mtDNA diseases
 Mitochondrial diseases are caused in 2 main ways, and they are all currently not possible to treat by actually correcting the defects in the mtDNA ([Hornig-Do et al. (2014)](https://www.embopress.org/doi/10.1002/emmm.201303202)). These diseases can also occur at any age, although it is often hereditary and therefore occurs at birth. The type and severity the of disease impacts on the progression, sometimes the disease gets worse and worse over time, whereas sometimes it appears and then the patient gradually recovers from it (often only partially), ([Tuppen et al. (2010)](https://doi.org/10.1016/j.bbabio.2009.09.005))..
