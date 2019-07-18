@@ -24,7 +24,7 @@ Nuclear DNA is very long and resembles a string, this means that it has to have 
 
 Unlike most DNA where half of the genetic material is inherited from each parent, [mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics) is only ever completely inherited from the mother of the person.
 
-<a href = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg">
+<a href = "https://commons.wikimedia.org/wiki/File:Mitochondrial_DNA_and_diseases.svg">
     <img src = "https://upload.wikimedia.org/wikipedia/commons/6/6e/Mitochondrial_DNA_and_diseases.svg" >
 </a>
 
