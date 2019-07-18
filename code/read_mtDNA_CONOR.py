@@ -19,6 +19,7 @@ assert(subSeq(3,2,"elephant")=="lepha")
 assert(subSeq(0,2,"elephant")=="ntele")
 assert(subSeq(6,3,"elephant")=="phantel")
 assert(subSeq(5,7,"elephant")=="ntelephanteleph")
+assert(subSeq(2,10, "elephant")=="elephantelephanteleph")
 
 path="..\data\mtDNA.fa"
 
