@@ -1,7 +1,7 @@
 bases = ["A", "C", "G", "T", "N"]
 
 class mtDNA_genome():
-    def __init__(self, path="data\\mtDNA.fa"):
+    def __init__(self, path="..\data\mtDNA.fa"):
         file = open(path, "r")
         lines = []
         for line in file.readlines():
