@@ -36,13 +36,10 @@ The amount of mutations is often called 'mutation load', this is different to he
 ## Using circos with mtDNA
 Circos is a tool that creates circular diagrams programatically using a dataset. It is well suited to mtDNA, because mtDNA is already in a loop as mentioned earlier. The diagrams produced by circos are good for showing relationships between large amounts of elements, it also looks nice.
 
-## Bibliography
+<!--->## Bibliography
 [wiki_mtDNA](https://en.wikipedia.org/wiki/Mitochondrial_DNA)
-
 [mtDNA_diseases](https://www.sciencedirect.com/science/article/pii/S0005272809002618?via%3Dihub)
-
 [bacterial_plasmids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC413948/?page=8)
-
 [wiki_human_mtDNA](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics)
-
 [mt-tRNA diseases](https://www.embopress.org/doi/10.1002/emmm.201303202)
+<!--->
