@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup as bs
-import urllib
+from urllib import request
 
-path = "https://en.wikipedia.org/wiki/Mitochondrial_DNA"
+path = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
 
-response = urllib.urlopen('http://python.org/')
-html = response.read()
-html = bs(file)
+webFile = request.urlopen(path).read()
+html = bs(webFile, features = "html.parser")
+
+print(html.table.prettify())

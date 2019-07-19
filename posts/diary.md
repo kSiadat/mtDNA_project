@@ -26,3 +26,6 @@
 * Created randomly generated genome, and plotted it in the same way as the actual genome
 
 ###2019-07-19
+* Added axis labels and removed N from the mitochondrial genome graphs
+* Wrote a post about the mitochondrial genome graphs
+* Learnt how to use beautiful soup 4
