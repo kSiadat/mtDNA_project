@@ -35,12 +35,9 @@ def plot(genome, window, interval):
 path1="..\data\mtDNA.fa"
 path2="..\data\mtDNA_random.fa"
 
-file = open(path2,"r")
+file = open(path1,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
 genome = "".join(lines[1:])
 
-plot(genome, 10, 1)
-plot(genome, 50, 10)
-plot(genome, 100, 50)
-plot(genome, 500, 10)
+plot(genome, 500, 1)
