@@ -4,5 +4,5 @@ This repository is about mitochondria and mitochondrial DNA (mtDNA). More specif
 
 * [Introduction](posts/About_mtDNA.md)
 
-* [Genome graphs post](posts/mitochondrial_genome_graphs.md)
+* [Genome graphs post](posts/mtichondrial_genome_graphs.md)
 * [Genome graphs](images)
