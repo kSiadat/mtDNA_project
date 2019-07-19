@@ -15,14 +15,16 @@ def subSeq(centre,window,seq):
     return(subseq)
 
 def plot(genome, window, interval):
-    #Plots a graph of eac base and their frequency in each area of a genome
+    #Plots a graph of each base and their frequency in each area of a genome
     bases = list(set(genome))
     bases.sort()
 
     fractions = [[subSeq(i*interval,window,genome).count(base)/(2*window + 1) for i in range((len(genome)//interval)+1)] for base in bases]
 
     for b in range(len(bases)):
-        plt.plot([f*interval for f in range(len(fractions[b]))], [fractions[b][f] for f in range(len(fractions[b]))])#, [style[b]+"-"])
+        plt.plot([f*interval for f in range(len(fractions[b]))], [fractions[b][f] for f in range(len(fractions[b]))])
+    plt.axvline(x=0, color="k")
+    plt.axvline(x=len(genome)-1, color="k")
     plt.legend(bases)
     plt.show()
 
@@ -40,14 +42,11 @@ path1="..\data\mtDNA.fa"
 path2="..\data\mtDNA_random.fa"
 
 
-file = open(path2,"r")
+file = open(path1,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
 
-print(lines)
-print(lines[1:])
 genome = "".join(lines[1:])
-print(genome[:100])
 
 """
 bases = list(set(genome))
@@ -67,5 +66,5 @@ plot(genome, 10, 1)
 plot(genome, 50, 10)
 plot(genome, 100, 50)
 plot(genome, 500, 10)
-#plot(genome, 1000, 1)
+plot(genome, 1000, 1)
 
