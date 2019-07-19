@@ -14,7 +14,7 @@
 * Created python program to parse mtDNA genome, and calculate the proportion of each base in a given range
 * Updated the repository structure
 
-### 2019-07-17
+### 2019-07-18
 * Added suggested changes to the article and repository
 	* Changed URLs to DOIs where possible
 	* Changed reference links to be more scientific/ more natural
@@ -23,3 +23,6 @@
 * Looked up list comperhension and a few of python's inbuilt methods
 * Looked up how to use matplotlib
 * Used matplotlib to create a function to plot fraction of bases, given a sampling rate and a sample window size
+* Created randomly generated genome, and plotted it in the same way as the actual genome
+
+###2019-07-19
