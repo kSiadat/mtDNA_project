@@ -17,6 +17,8 @@ def subSeq(centre,window,seq):
 def plot(genome, window, interval):
     #Plots a graph of each base and their frequency in each area of a genome
     bases = list(set(genome))
+    if "N" in bases:
+        del bases[bases.index("N")]
     bases.sort()
 
     fractions = [[subSeq(i*interval,window,genome).count(base)/(2*window + 1) for i in range((len(genome)//interval)+1)] for base in bases]
@@ -26,18 +28,19 @@ def plot(genome, window, interval):
     plt.axvline(x=0, color="k")
     plt.axvline(x=len(genome)-1, color="k")
     plt.legend(bases)
+    plt.xlabel("Genome coordinate")
+    plt.ylabel("Proportion of base")
     plt.show()
 
 path1="..\data\mtDNA.fa"
 path2="..\data\mtDNA_random.fa"
 
-file = open(path1,"r")
+file = open(path2,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
-
 genome = "".join(lines[1:])
+
 plot(genome, 10, 1)
 plot(genome, 50, 10)
 plot(genome, 100, 50)
 plot(genome, 500, 10)
-
