@@ -24,7 +24,7 @@
 + Used matplotlib to create a function to plot fraction of bases, given a sampling rate and a sample window size. Different window sizes were experimented with in order to see what size gave the most information in the graph.
 + Created randomly generated genome, and plotted it in the same way as the actual genome. This was to see if there was any difference between the actual and random genome, so that I could know whether the results from the actual genome were significant or not.
 
-###2019-07-19
+### 2019-07-19
 + Added axis labels and removed N from the mitochondrial genome graphs
 + Wrote a post about the mitochondrial genome graphs **Add plots to the post - CONOR**
 + Learnt how to use beautiful soup 4
