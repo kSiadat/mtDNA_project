@@ -1,4 +1,5 @@
 # Mitochondrial genome graphs
+You can find the [images](../images) and [code](../code) using these links.
 
 The genome is essentially a long list of bases. The x-axis represents a position in the genome.
 
