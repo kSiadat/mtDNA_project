@@ -19,13 +19,13 @@ Actual genome, window: 500, interval: 10
 <img src="../images/genome_500_10.png" align="right" alt="genome graph">
 
 Random genome, window: 10, interval: 1
-<img src="../images/genome_10_1.png" align="left" alt="genome graph">
+<img src="../images/genome_random_10_1.png" align="left" alt="genome graph">
 
 Random genome, window: 100, interval: 50
-<img src="../images/genome_100_50.png" align="middle" alt="genome graph">
+<img src="../images/genome_random_100_50.png" align="middle" alt="genome graph">
 
 Random genome, window: 500, interval: 10
-<img src="../images/genome_500_10.png" align="right" alt="genome graph">
+<img src="../images/genome_random_500_10.png" align="right" alt="genome graph">
 
 When looking at the graphs that have a small window size, it is hard to understand the information properly because the lines fluctuate so much between each index position, and there are so many indexes represented in a relativley small space. So it looks very cramped and is hard to take in, which makes it impossible to tell the difference between the randomly generated and actual genomes.
 
