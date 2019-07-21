@@ -1,8 +1,11 @@
-# Annotating circular mtDNA genomes
+# Drawing circular mtDNA genomes
 
-This repository is about mitochondria and mitochondrial DNA (mtDNA). More specifically it is about human mitochondrial genetics, and how mtDNA is involved with diseases called mitochondrial disorders.
+This project is about visualising and annotating circular mtDNA genomes.
 
 * [Introduction](posts/about_mtDNA.md)
+	* What are mitochondria
+	* What is mitochondrial DNA (mtDNA)
+	* Why is mtDNA interesting
 
-* [Genome graphs post](posts/mitochondrial_genome_graphs.md)
-* [Genome graphs](images)
+ * [Prevalence of nucleobases along the length of the mitochondrial genome](posts/mitochondrial_genome_graphs.md)
+ 

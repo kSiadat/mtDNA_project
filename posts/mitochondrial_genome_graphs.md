@@ -8,7 +8,7 @@ The genome is essentially a long list of bases. The x-axis just represents a pos
 The y-axis is the proportion of a certain section of the genome that is each base. Each section is an area of the genome based on an index and window size. The index is the x-axis value, and the window size is specified when creating the graph. The section is from index - window to index + window.
 
 ## Comparing different graphs
-Each graph is created from 1 of 2 sets of data. There is the actual genome, which is a real mitochondrial genome that has been sequenced, and then there is the randomly genereated genome I created in order to compare to the actual genome to see if there would be much difference.
+Each graph is created from 1 of 2 sets of data. There is the actual genome, which is a real mitochondrial genome that has been sequenced by the Wellcome Centre for Mitochondrial Research, and then there is the randomly genereated genome I created in order to compare to the actual genome to see if there would be much difference. In the random genome, each point has an equal chance of being each base, although this isn't actually the case with the real genome.
 
 Each graph also differs in terms of interval (the distance between each sample) and window size.
 
