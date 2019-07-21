@@ -26,8 +26,12 @@
 
 ### 2019-07-19
 + Added axis labels and removed N from the mitochondrial genome graphs
-+ Wrote a post about the mitochondrial genome graphs **Add plots to the post - CONOR**
++ Wrote a post about the mitochondrial genome graphs
 + Learnt how to use beautiful soup 4
+
+### 2019-07-21
++ Added suggestedchanges to do with referencing; added more references to resources used and where to get more information about terms/topics mentioned
++ Added graphs to the post about base graphs, and added some extra comparison details
 
 <!--
 Comment out markdown code: https://stackoverflow.com/questions/4823468/comments-in-markdown
