@@ -47,3 +47,7 @@ It turns out that I should have had the program split up in to multiple configur
 Added more references to the diary, that had been sitting around commented out for a while
 
 Resized the labels on the diagrams to make them easier to read. I just guessed that size would be a parameter, but had to look up about [resizing](https://gist.github.com/CnrLwlss/9587f615a7440113430c), and turns out I should use 'fontsize' or 'label_size' instead of just 'size'. I also had to look up how to position the [legend](https://matplotlib.org/3.1.1/api/legend_api.html).
+
+Ran into a problem with not having the data used in 1 of the tutorials, then realised I have already downloaded the tutorials from circos, which come with the necessary data.
+
+Completed going through Quick start tutorial section.
