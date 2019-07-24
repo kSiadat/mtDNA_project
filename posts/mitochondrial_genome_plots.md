@@ -1,9 +1,5 @@
-# Mitochondrial genome plots
-You can find the [images](../images) and [code](../code) using these links.
-
-The genome is essentially a long list of bases. The x-axis represents a position in the genome.
-
-The y-axis is the proportion of a windowed section (size specified by user) of the genome that is centred around the position represented on the x-axis.
+# How nucleobases vary along the mitochondrial genome
+Genetic material is made up of 4 different nucleobases called A, C, G, and T. The letters are just short for what the chemicals are actually called. Since mtDNA is circular the genome can be represented using a circular string of characters, where each character is 1 of the bases. Sampling a section (or window) of the genome centered around a single point means that you can calculate the proportion of that window that is represented by each base. Doing this at every base along the genome creates a plot where you cna see how the proportion of each base varies along the genome.
 
 ## Comparing different plots
 Each plot is created from 1 of 2 sets of data. There is the actual genome, which is a real mitochondrial genome that has been sequenced by the Wellcome Centre for Mitochondrial Research, and then there is the randomly genereated genome I created in order to compare to the actual genome to see if there would be much difference. In the random genome, each point has an equal chance of being each base, although this isn't actually the case with the real genome.
@@ -32,4 +28,6 @@ When looking at the plots that have a small window size, it is hard to understan
 
 However when looking at larger window sizes, you can see more interesting patterns, and the . The randomly generated genome fluctuates a lot more than the actual genome, similarly to when looking at smaller window sizes, and in the actual genome some bases are more common than others on average, which is not true for the comlpetely random genome.
 
-With interval size, having a smaller inteval means that you won't miss any of the interesting data. However with larger window sizes this doesn't matter, but it can make the line seem smoother by having larger intervals.
+With interval size, having a smaller inteval means that you won't miss any of the interesting data. However with larger window sizes this doesn't matter, but it can make the line seem smoother by having larger intervals. That is why the window size 100 and 500 used to have intervals > 1. However I changed them to 1 because I tought it would be better to not miss out data.
+
+You can find the [images](../images) and [code](../code) using these links.
