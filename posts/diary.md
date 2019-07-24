@@ -33,6 +33,9 @@
 + Added suggestedchanges to do with referencing; added more references to resources used and where to get more information about terms/topics mentioned
 + Added graphs to the post about base graphs, and added some extra comparison details
 
+### 2019-07-24
+Today I started with circos
+
 <!--
 Comment out markdown code: https://stackoverflow.com/questions/4823468/comments-in-markdown
 
