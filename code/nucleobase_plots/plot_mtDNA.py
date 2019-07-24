@@ -33,10 +33,10 @@ def plot(genome, window, interval):
     plt.tick_params(axis='both', which='major', labelsize=20)
     plt.show()
 
-path1="..\data\mtDNA.fa"
-path2="..\data\mtDNA_random.fa"
+path1="..\..\data\mtDNA.fa"
+path2="..\..\data\mtDNA_random.fa"
 
-file = open(path1,"r")
+file = open(path2,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
 genome = "".join(lines[1:])
