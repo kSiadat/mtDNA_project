@@ -11,22 +11,22 @@ Each plot is created from 1 of 2 sets of data. There is the actual genome, which
 Each plot also differs in terms of interval (the distance between each sample) and window size.
 
 Actual genome, window: 10, interval: 1
-<img src="../images/genome_10_1.png" alt="genome plot">
+<img src="../images/base_plots/genome_10_1.png" alt="genome plot">
 
 Actual genome, window: 100, interval: 50
-<img src="../images/genome_100_50.png" alt="genome plot">
+<img src="../images/base_plots/genome_100_50.png" alt="genome plot">
 
 Actual genome, window: 500, interval: 10
-<img src="../images/genome_500_10.png" alt="genome plot">
+<img src="../images/base_plots/genome_500_10.png" alt="genome plot">
 
 Random genome, window: 10, interval: 1
-<img src="../images/genome_random_10_1.png" alt="genome plot">
+<img src="../images/base_plots/genome_random_10_1.png" alt="genome plot">
 
 Random genome, window: 100, interval: 50
-<img src="../images/genome_random_100_50.png" alt="genome plot">
+<img src="../images/base_plots/genome_random_100_50.png" alt="genome plot">
 
 Random genome, window: 500, interval: 10
-<img src="../images/genome_random_500_10.png" alt="genome plot">
+<img src="../images/base_plots/genome_random_500_10.png" alt="genome plot">
 
 When looking at the plots that have a small window size, it is hard to understand the information properly because the lines fluctuate so much between each index position, and there are so many indexes represented in a relativley small space. So it looks very cramped and is hard to take in, which makes it impossible to tell the difference between the randomly generated and actual genomes.
 
