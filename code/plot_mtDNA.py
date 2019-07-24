@@ -27,10 +27,10 @@ def plot(genome, window, interval):
         plt.plot([f*interval for f in range(len(fractions[b]))], [fractions[b][f] for f in range(len(fractions[b]))])
     plt.axvline(x=0, color="k")
     plt.axvline(x=len(genome)-1, color="k")
-    plt.legend(bases, fontsize="xx-large")
-    plt.xlabel("Genome coordinate", size="xx-large")
-    plt.ylabel("Proportion of base", size="xx-large")
-    plt.tick_params(axis='both', which='major', labelsize="xx-large")
+    plt.legend(bases, fontsize=30)
+    plt.xlabel("Genome coordinate", size=30)
+    plt.ylabel("Proportion of base", size=30)
+    plt.tick_params(axis='both', which='major', labelsize=20)
     plt.show()
 
 path1="..\data\mtDNA.fa"
