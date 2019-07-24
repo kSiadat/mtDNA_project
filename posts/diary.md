@@ -44,3 +44,5 @@ The aim right now is to be able to prgrammatically generate better versiens of p
 ### 2019-07-24
 It turns out that I should have had the program split up in to multiple configuration files and 'include' them (basically import them). Although the actual problem that was causing the error must have been me copying down the code from the tutorial wrong, because when running copy pasted code it worked fine. I also uninstalled strawberry perl 23-bit and installed 64-bit since my computer is 64-bit.
 
+Added more references to the diary
+
