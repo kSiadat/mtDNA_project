@@ -1,5 +1,10 @@
 
 articles/images/Thumbs.db
 images/Thumbs.db
+<<<<<<< HEAD
 circos_tutorial/1_Quick_Start/Thumbs.db
 circos_tutorial/1_Quick_Start/tutorial_1/Thumbs.db
+=======
+circos_tutorial/1_Quick_Start/circos.png
+circos_tutorial/1_Quick_Start/circos.svg
+>>>>>>> 3941516b4f0bc39587891c4987657b4aeb3d265c
