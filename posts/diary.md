@@ -46,5 +46,4 @@ It turns out that I should have had the program split up in to multiple configur
 
 Added more references to the diary, that had been sitting around commented out for a while
 
-Resized the labels on the diagrams to make them easier to read. I just guessed that size would be a parameter, but had to [look up](https://matplotlib.org/3.1.1/api/legend_api.html) about legend sizes and non absolute size values (passing "xx-large" instead of 20 for example). I also had to look up [tick label sizes](https://stackoverflow.com/questions/6390393/matplotlib-make-tick-labels-font-size-smaller/11386056#11386056). I tried this then decided to not actually use it in the end because the largest relative size was still too small.
-
+Resized the labels on the diagrams to make them easier to read. I just guessed that size would be a parameter, but had to look up about [resizing](https://gist.github.com/CnrLwlss/9587f615a7440113430c), and turns out I should use 'fontsize' or 'label_size' instead of just 'size'.
