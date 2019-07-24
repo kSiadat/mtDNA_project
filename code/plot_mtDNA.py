@@ -28,19 +28,19 @@ def plot(genome, window, interval):
     plt.axvline(x=0, color="k")
     plt.axvline(x=len(genome)-1, color="k")
     plt.legend(bases, fontsize=30)
-    plt.xlabel("Genome coordinate", size=30)
-    plt.ylabel("Proportion of base", size=30)
+    plt.xlabel("Genome coordinate", fontsize=30)
+    plt.ylabel("Proportion of base", fontsize=30)
     plt.tick_params(axis='both', which='major', labelsize=20)
     plt.show()
 
 path1="..\data\mtDNA.fa"
 path2="..\data\mtDNA_random.fa"
 
-file = open(path2,"r")
+file = open(path1,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
 genome = "".join(lines[1:])
 
 plot(genome, 10, 1)
-plot(genome, 100, 50)
+plot(genome, 100, 1)
 plot(genome, 500, 1)
