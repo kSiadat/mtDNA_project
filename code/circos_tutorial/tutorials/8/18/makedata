@@ -1,0 +1,239 @@
+#!/bin/env perl
+
+=pod
+
+=head1 NAME
+
+makedata - create some random cumulative data sets
+
+=head1 SYNOPSIS
+
+  # -n number of data sets
+  # -m a,b minimum,maximum number of data points in each data set
+  makedata -n 10 -m 2,8
+
+=head1 DESCRIPTION
+
+=head1 OPTIONS
+
+=head1 HISTORY
+
+=over
+
+=item * DD Month Year
+
+First version.
+
+=back 
+
+=head1 AUTHOR
+
+Martin Krzywinski
+
+=head1 CONTACT
+
+Martin Krzywinski
+Genome Sciences Center
+BC Cancer Research Center
+100-570 W 7th Ave
+Vancouver BC V5Z 4S6
+
+mkweb.bcgsc.ca
+martink@bcgsc.ca
+
+=cut
+
+use strict;
+use warnings FATAL=>"all";
+
+use Carp;
+use Config::General;
+use Cwd qw(getcwd abs_path);
+use Data::Dumper;
+use File::Basename;
+use FindBin;
+use Getopt::Long;
+use Math::VecStat qw(sum min max average);
+use Pod::Usage;
+use Time::HiRes qw(gettimeofday tv_interval);
+use Storable;
+use lib "$FindBin::RealBin";
+use lib "$FindBin::RealBin/../lib";
+use lib "$FindBin::RealBin/lib";
+
+our (%OPT,%CONF,$conf);
+our @COMMAND_LINE = (
+    "n=i",
+    "m=s",
+    "file=s",
+    "configfile=s",
+		     "help",
+		     "man",
+		     "debug:i");
+our $VERSION = 0.01;
+
+# common and custom module imports below
+#use Regexp::Common;
+#use IO::File;
+#use List::Util;
+#use List::MoreUtils;
+use Math::Round;
+#use Set::IntSpan;
+#use Statistics::Descriptive;
+
+# read and parse configuration file
+_parse_config();
+#_dump_config();
+
+for my $i (0..$CONF{n}-1) {
+    my $file = sprintf("species.%d.txt",$i);
+    open(F,">$file");
+    my ($min,$max) = split(",",$CONF{m});
+    my @n = map { rand() } ( $min .. round($min+($max-$min)*rand()));
+    my $sum = sum(@n);
+    @n = map { 1000 * $_/$sum } @n;
+    my @id = (sort { rand() <=> rand() } (1..$max))[0..@n-1];
+    @id = sort {$a <=> $b} @id;
+    my $prev = 0;
+    for my $j (0..@n-1) {
+	printinfo($prev);
+	printf F ("gh %d %d id=gh%d\n",
+		  $prev,
+		  $prev+$n[$j],
+		  $id[$j],
+	    );
+	$prev += $n[$j];
+    }
+    close(F);
+}
+sub validateconfiguration {
+
+}
+
+# HOUSEKEEPING ###############################################################
+
+sub _dump_config {
+    printdumper(\%OPT,\%CONF);
+}
+
+sub _parse_config {
+  my $dump_debug_level = 3;
+  GetOptions(\%OPT,@COMMAND_LINE);
+  pod2usage() if $OPT{help};
+  pod2usage(-verbose=>2) if $OPT{man};
+  loadconfiguration($OPT{configfile});
+  populateconfiguration(); # copy command line options to config hash
+  validateconfiguration(); 
+  if(defined $CONF{debug} && $CONF{debug} == $dump_debug_level) {
+    $Data::Dumper::Indent    = 2;
+    $Data::Dumper::Quotekeys = 0;
+    $Data::Dumper::Terse     = 0;
+    $Data::Dumper::Sortkeys  = 1;
+    $Data::Dumper::Varname = "OPT";
+    printdumper(\%OPT);
+    $Data::Dumper::Varname = "CONF";
+    printdumper(\%CONF);
+    exit;
+  }
+}
+
+sub populateconfiguration {
+  for my $var (keys %OPT) {
+    $CONF{$var} = $OPT{$var};
+  }
+  repopulateconfiguration(\%CONF);
+}
+
+sub repopulateconfiguration {
+  my $root     = shift;
+  return unless ref($root) eq "HASH";
+  for my $key (keys %$root) {
+      my $value = $root->{$key};
+      if(ref($value) eq "HASH") {
+	  repopulateconfiguration($value);
+      } elsif (ref($value) eq "ARRAY") {
+	  for my $item (@$value) {
+	      repopulateconfiguration($item);
+	  }
+      } elsif(defined $value) {
+	  while($value =~ /__([^_].+?)__/g) {
+	      my $source = "__" . $1 . "__";
+	      my $target = eval $1;
+	      $value =~ s/\Q$source\E/$target/g;
+	  }
+	  $root->{$key} = $value;
+      }
+  }
+}
+
+################################################################
+#
+#
+
+sub loadconfiguration {
+  my $file = shift;
+  if(defined $file) {
+    if(-e $file && -r _) {
+      # provided configuration file exists and can be read
+      $file = abs_path($file);
+    } else {
+      confess "The configuration file [$file] passed with -configfile does not exist or cannot be read.";
+    }
+  } else {
+    # otherwise, try to automatically find a configuration file
+    my ($scriptname,$path,$suffix) = fileparse($0);
+    my $cwd     = getcwd();
+    my $bindir  = $FindBin::RealBin;
+    my $userdir = $ENV{HOME};
+    my @candidate_files = (
+	"$cwd/$scriptname.conf",
+	"$cwd/etc/$scriptname.conf",
+	"$cwd/../etc/$scriptname.conf",
+	"$bindir/$scriptname.conf",
+	"$bindir/etc/$scriptname.conf",
+	"$bindir/../etc/$scriptname.conf",
+	"$userdir/.$scriptname.conf",
+	);
+    my @additional_files = (
+	
+	);
+    for my $candidate_file (@additional_files,@candidate_files) {
+	#printinfo("configsearch",$candidate_file);
+	if(-e $candidate_file && -r _) {
+	    $file = $candidate_file;
+	    #printinfo("configfound",$candidate_file);
+	    last;
+	}
+    }
+  }
+  if(defined $file) {
+    $OPT{configfile} = $file;
+    $conf = new Config::General(
+	-ConfigFile=>$file,
+	-IncludeRelative=>1,
+	-IncludeAgain=>1,
+	-ExtendedAccess=>1,
+	-AllowMultiOptions=>"yes",
+	-LowerCaseNames=>1,
+	-AutoTrue=>1
+	);
+    %CONF = $conf->getall;
+  }
+}
+
+sub printdebug {
+    my ($level,@msg) = @_;
+    my $prefix = "debug";
+    if(defined $CONF{debug} && $CONF{debug} >= $level) {
+	printinfo(sprintf("%s[%d]",$prefix,$level),@msg);
+    }
+}
+
+sub printinfo {
+    print join(" ",@_),"\n";
+}
+
+sub printdumper {
+    print Dumper(@_);
+}
+

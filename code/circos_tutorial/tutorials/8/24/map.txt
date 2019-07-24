@@ -1,0 +1,18 @@
+# m-chrn is chromosome n on map m
+#
+# Circos requires integer coordinates. Length of chromosome
+# is specified as 10 x length of map so that non-integer
+# positions can be encoded
+#
+#
+# e.g. position 5.5 will be 55
+
+chr - 1-chr1 1 0 175 black
+chr - 1-chr2 2 0 250 black
+chr - 1-chr3 3 0 300 black
+chr - 2-chr1 1 0 150 black
+chr - 2-chr2 2 0 200 black
+chr - 2-chr3 3 0 250 black
+chr - 3-chr1 1 0 150 black
+chr - 3-chr2 2 0 150 black
+chr - 3-chr3 3 0 175 black

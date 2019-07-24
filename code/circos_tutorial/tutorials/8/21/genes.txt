@@ -1,0 +1,17 @@
+# Gene labels relative to position in cycle.
+#
+# For example, A is at 32/450 on G1.
+#
+cycle 4 4 0 name=A,type=1
+cycle 9 9 0 name=B,type=1
+cycle 24 24 0 name=C,type=1
+cycle 31 31 0 name=D,type=1
+cycle 41 41 0 name=E,type=1
+cycle 59 59 0 name=F,type=1
+cycle 74 74 0 name=G,type=1
+cycle 87 87 0 name=H,type=2
+cycle 91 91 0 name=I,type=2
+cycle 93 93 0 name=J,type=2
+
+
+

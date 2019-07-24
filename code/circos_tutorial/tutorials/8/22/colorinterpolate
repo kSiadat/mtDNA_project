@@ -1,0 +1,368 @@
+#!/bin/env perl
+
+=pod
+
+=head1 NAME
+
+script - 
+
+=head1 SYNOPSIS
+
+  ./script
+
+=head1 DESCRIPTION
+
+=head1 OPTIONS
+
+=cut
+
+use strict;
+use warnings FATAL=>"all";
+
+use Carp;
+use Config::General;
+use Cwd qw(getcwd abs_path);
+use Data::Dumper;
+use File::Basename;
+use FindBin;
+use Getopt::Long;
+use Math::Round qw(round);
+use Math::VecStat qw(sum min max average);
+use Pod::Usage;
+use Time::HiRes qw(gettimeofday tv_interval);
+use Storable;
+use lib "$FindBin::RealBin";
+use lib "$FindBin::RealBin/../lib";
+use lib "$FindBin::RealBin/lib";
+
+our (%OPT,%CONF,$conf);
+our @COMMAND_LINE = ("file=s",
+										 "configfile=s",
+										 "rotate=f",
+										 "scheme=s",
+										 "help",
+										 "cdump",
+										 "man",
+										 "debug");
+our $VERSION = 0.01;
+
+# common and custom module imports below
+#use Regexp::Common;
+#use IO::File;
+#use List::Util;
+#use List::MoreUtils;
+#use Set::IntSpan;
+#use Statistics::Descriptive;
+
+use Color::Calc qw();
+# read and parse configuration file
+parse_config();
+
+sub validateconfiguration {
+	$CONF{scheme} ||= "nature";
+	$CONF{rotate} ||= 0;
+}
+
+use Graphics::ColorObject;
+my $cc = Color::Calc->new();
+my $palette = $CONF{colors}{ $CONF{scheme} };
+
+my $color;
+# assign colors
+for my $c (keys %$palette) {
+	my $str = $palette->{$c};
+	$color->{$c}{init} = Graphics::ColorObject->new_RGB255([split(",",$str)]);
+	my $lch = $color->{$c}{init}->as_LCHab();
+	$color->{$c}{init} = 
+		Graphics::ColorObject->new_LCHab([$lch->[0],
+																			$lch->[1],
+																			$CONF{rotate}+$lch->[2]]);
+}
+
+my @chr = (1..24);
+my @chr2 = @chr;
+# interpolate
+for my $chr (@chr) {
+	push @chr2, (shift @chr2);
+	#printinfo($chr,":",@chr2);
+	next if $color->{$chr}{init};
+	my ($cnext) = grep($color->{$_}{init}, @chr2);
+	my ($cprev) = grep($color->{$_}{init}, reverse(@chr2));
+
+	my $lchprev = $color->{$cprev}{init}->as_LCHab();
+	my $lchnext = $color->{$cnext}{init}->as_LCHab();
+
+	my $dnext = min(($chr - $cnext)%24,($cnext-$chr)%24);
+	my $dprev = min(($chr - $cprev)%24,($cprev-$chr)%24);
+
+	printdebug($chr,$cprev,$cnext,"d",$dprev,$dnext);
+	my $lch;
+
+	for my $i (0..2) {
+		$lch->[$i] = interp($lchprev->[$i],
+												$lchnext->[$i],
+												abs($dprev)/(abs($dprev)+abs($dnext)));
+	}
+
+	my $rgb1 = $color->{$cprev}{init}->as_RGB255;
+	my $rgb2 = $color->{$cnext}{init}->as_RGB255;
+	my $rgb;
+	for my $i (0..2) {
+		$rgb->[$i] = interp($rgb1->[$i],
+												$rgb2->[$i],
+												abs($dprev)/(abs($dprev)+abs($dnext)))
+	}
+	# find hue
+	$color->{$chr} = Graphics::ColorObject->new_RGB255($rgb);
+	my $hue = $color->{$chr}->as_LCHab()->[2];
+	printdebug($hue);
+	#$color->{$chr} = Graphics::ColorObject->new_LCHab($lch);
+}
+
+printinfo("<colors>");
+for my $chr (@chr) {
+	my $label = $chr;
+	$label = "x" if $chr == 23;
+	$label = "y" if $chr == 24;
+	my $c = $color->{$chr}{init} || $color->{$chr};
+	printinfo(sprintf("chr%s* = %s",
+										$label,
+										join(",",@{$c->as_RGB255})));
+}
+printinfo("</colors>");
+
+sub interp {
+	my ($x,$y,$f) = @_;
+	return $x + ($y-$x)*$f;
+}
+
+
+sub read_file {
+	my $inputhandle = get_handle();
+	my $data;
+	while(<$inputhandle>) {
+		chomp;
+		my @tok = split;
+		push @$data, \@tok;
+	}
+	return $data;
+}
+
+sub get_handle {
+	my $h;
+	if(my $file = $CONF{file}) {
+		die "No such file [$file]" unless -e $file;
+		open(FILE,$file);
+		$h = \*FILE;
+	} else {
+		$h = \*STDIN;
+	}
+	return $h;
+}
+
+# HOUSEKEEPING ###############################################################
+
+sub dump_config {
+	printdumper(\%OPT,\%CONF);
+}
+
+sub parse_config {
+  my $dump_debug_level = 3;
+  GetOptions(\%OPT,@COMMAND_LINE);
+  pod2usage() if $OPT{help};
+  pod2usage(-verbose=>2) if $OPT{man};
+  loadconfiguration($OPT{configfile});
+  populateconfiguration();	# copy command line options to config hash
+  validateconfiguration(); 
+  if ($CONF{cdump}) {
+    $Data::Dumper::Indent    = 2;
+    $Data::Dumper::Quotekeys = 0;
+    $Data::Dumper::Terse     = 0;
+    $Data::Dumper::Sortkeys  = 1;
+    $Data::Dumper::Varname = "OPT";
+    printdumper(\%OPT);
+    $Data::Dumper::Varname = "CONF";
+    printdumper(\%CONF);
+    exit;
+  }
+}
+
+sub populateconfiguration {
+  for my $var (keys %OPT) {
+    $CONF{$var} = $OPT{$var};
+  }
+  repopulateconfiguration(\%CONF);
+}
+
+sub repopulateconfiguration {
+  my ($node,$parent_node_name) = shift;
+  return unless ref($node) eq "HASH";
+  for my $key (keys %$node) {
+		my $value = $node->{$key};
+		if (ref($value) eq "HASH") {
+			repopulateconfiguration($value,$key);
+		} elsif (ref($value) eq "ARRAY") {
+			for my $item (@$value) {
+				repopulateconfiguration($item,$key);
+			}
+		} elsif (defined $value) {
+			my $new_value = parse_field($value,$key,$parent_node_name,$node);
+			$node->{$key} = $new_value;
+		}
+	}
+}
+
+sub parse_field {
+	my ($str,$key,$parent_node_name,$node) = @_;
+	# replace configuration field
+	# conf(LEAF,LEAF,...)
+	while ( $str =~ /(conf\(\s*(.+?)\s*\))/g ) {
+		my ($template,$leaf) = ($1,$2);
+		if (defined $template && defined $leaf) {
+			my @leaf         = split(/\s*,\s*/,$leaf);
+			my $new_template;
+			if (@leaf == 2 && $leaf[0] eq ".") {
+				$new_template = $node->{$leaf[1]};
+			} else {
+				$new_template = fetch_conf(@leaf);
+			}
+			$str =~ s/\Q$template\E/$new_template/g;
+		}
+	}
+	if ($str =~ /\s*eval\s*\(\s*(.+)\s*\)/) {
+		my $fn = $1;
+		$str = eval $fn;
+		if ($@) {
+			die "could not parse configuration parameter [$@]";
+		}
+	}
+	return $str;
+}
+
+sub fetch_configuration {
+	my @config_path = @_;
+	my $node        = \%CONF;
+	if(! @config_path) {
+		return \%CONF;
+	}
+	for my $path_element (@config_path) {
+		if (! exists $node->{$path_element}) {
+	    return undef;
+		} else {
+	    $node = $node->{$path_element};
+		}
+	}
+	return $node;
+}
+
+sub fetch_conf {
+	return fetch_configuration(@_);
+}
+
+################################################################
+#
+#
+
+sub loadconfiguration {
+  my $file = shift;
+  if (defined $file) {
+    if (-e $file && -r _) {
+      # provided configuration file exists and can be read
+      $file = abs_path($file);
+    } else {
+      confess "The configuration file [$file] passed with -configfile does not exist or cannot be read.";
+    }
+  } else {
+    # otherwise, try to automatically find a configuration file
+    my ($scriptname,$path,$suffix) = fileparse($0);
+    my $cwd     = getcwd();
+    my $bindir  = $FindBin::RealBin;
+    my $userdir = $ENV{HOME};
+    my @candidate_files = (
+													 "$cwd/$scriptname.conf",
+													 "$cwd/etc/$scriptname.conf",
+													 "$cwd/../etc/$scriptname.conf",
+													 "$bindir/$scriptname.conf",
+													 "$bindir/etc/$scriptname.conf",
+													 "$bindir/../etc/$scriptname.conf",
+													 "$userdir/.$scriptname.conf",
+													);
+    my @additional_files = ();
+    for my $candidate_file (@additional_files,@candidate_files) {
+			#printinfo("configsearch",$candidate_file);
+			if (-e $candidate_file && -r _) {
+				$file = $candidate_file;
+				#printinfo("configfound",$candidate_file);
+				last;
+			}
+    }
+  }
+  if (defined $file) {
+    $OPT{configfile} = $file;
+    $conf = new Config::General(
+																-ConfigFile=>$file,
+																-IncludeRelative=>1,
+																-IncludeAgain=>1,
+																-ExtendedAccess=>1,
+																-AllowMultiOptions=>"yes",
+																-LowerCaseNames=>1,
+																-AutoTrue=>1
+															 );
+    %CONF = $conf->getall;
+  }
+}
+
+sub printdebug {
+	printerr(@_) if defined $CONF{debug};
+}
+
+sub printinfo {
+	print join(" ",map { defined $_ ? $_ : "_undef_" } @_),"\n";
+}
+
+sub printfinfo {
+	my ($fmt,@args) = @_;
+	@args = map { defined $_ ? $_ : "_undef_" } @args;
+	printf("$fmt\n",@args);
+}
+
+sub printerr {
+	print STDERR join(" ",map { defined $_ ? $_ : "_undef_" } @_),"\n";
+}
+
+sub printdumper {
+	print Dumper(@_);
+}
+
+=pod 
+
+=head1 HISTORY
+
+=over
+
+=item * 24 Jun 2014
+
+Fixed config dump.
+
+=item * 12 May 2014
+
+Added printfinfo().
+
+=back 
+
+=head1 AUTHOR
+
+Martin Krzywinski
+
+=head1 CONTACT
+
+Martin Krzywinski
+Genome Sciences Center
+BC Cancer Research Center
+100-570 W 7th Ave
+Vancouver BC V5Z 4S6
+
+mkweb.bcgsc.ca
+martink@bcgsc.ca
+
+=cut

@@ -1,0 +1,6 @@
+gh 0 200 id=gh2
+gh 200 231 id=gh6
+gh 231 376 id=gh7
+gh 376 663 id=gh8
+gh 663 741 id=gh9
+gh 741 1000 id=gh10

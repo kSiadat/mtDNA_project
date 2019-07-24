@@ -1,0 +1,15 @@
+# Links between genes
+
+g1 5 5 g1 25 25 type=1
+g1 5 5 g1 45 45 type=1
+g1 5 5 g1 55 55 type=1
+g1 5 5 g1 75 75 type=1
+
+g2 15 15 g2 35 35 type=2
+g2 15 15 g2 65 65 type=2
+g2 15 15 s 25 25 type=2
+g2 15 15 s 75 75 type=2 
+g2 15 15 g1 5 5 type=2
+g2 15 15 g1 25 25 type=2
+g2 15 15 g1 45 45 type=2
+

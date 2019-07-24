@@ -1,0 +1,65 @@
+# this link will appear twisted, but it is not 
+# considered 'inverted'
+link1 hs1 0 10000000 twist=1
+link1 hs2 220000000 230000000 twist=1
+
+# this link has start < end for both ends,
+# and is therefore not inverted
+link2 hs1 20000000 30000000 
+link2 hs2 200000000 210000000 
+
+# this link has start < end for both ends,
+# and is therefore not initially inverted;
+# however, because of the inverted=1 flag 
+# for the first end, start/end coordinates for this
+# end reversed
+link2i hs1 40000000 50000000 inverted=1
+link2i hs2 180000000 190000000 
+
+# this link has start > end for its first end
+# and is therefore considered inverted (_REV1_ = 1)
+link3 hs1 70000000 60000000
+link3 hs2 160000000 170000000
+
+# this link has start > end for its second end
+# and is therefore considered inverted (_REV2_ = 1)
+link4 hs1 80000000 90000000
+link4 hs2 150000000 140000000
+
+# this link has start > end for both ends
+link5 hs1 110000000 100000000
+link5 hs2 130000000 120000000
+
+################################################################
+# explicitly draw line links between the start and end
+# positions of each link end
+
+link1a hs1 0 0 ribbon=no,thickness=5,color=black,z=10
+link1a hs2 220000000 220000000 ribbon=no,thickness=5,color=black,z=10
+link1b hs1 10000000 10000000 ribbon=no,thickness=5,color=black,z=10
+link1b hs2 230000000 230000000 ribbon=no,thickness=5,color=black,z=10
+
+link2a hs1 20000000 20000000 ribbon=no,thickness=5,color=black,z=10
+link2a hs2 200000000 200000000 ribbon=no,thickness=5,color=black,z=10
+link2b hs1 30000000 30000000 ribbon=no,thickness=5,color=black,z=10
+link2b hs2 210000000 210000000 ribbon=no,thickness=5,color=black,z=10
+
+link2ia hs1 40000000 40000000 ribbon=no,thickness=5,color=black,z=10
+link2ia hs2 180000000 180000000 ribbon=no,thickness=5,color=black,z=10
+link2ib hs1 50000000 50000000 ribbon=no,thickness=5,color=black,z=10
+link2ib hs2 190000000 190000000 ribbon=no,thickness=5,color=black,z=10
+
+link3a hs1 70000000 70000000 ribbon=no,thickness=5,color=black,z=10
+link3a hs2 160000000 160000000 ribbon=no,thickness=5,color=black,z=10
+link3b hs1 60000000 60000000 ribbon=no,thickness=5,color=black,z=10
+link3b hs2 170000000 170000000 ribbon=no,thickness=5,color=black,z=10
+
+link4a hs1 80000000 80000000 ribbon=no,thickness=5,color=black,z=10
+link4a hs2 150000000 150000000 ribbon=no,thickness=5,color=black,z=10
+link4b hs1 90000000 90000000 ribbon=no,thickness=5,color=black,z=10
+link4b hs2 140000000 140000000 ribbon=no,thickness=5,color=black,z=10
+
+link5a hs1 110000000 110000000 ribbon=no,thickness=5,color=black,z=10
+link5a hs2 130000000 130000000 ribbon=no,thickness=5,color=black,z=10
+link5b hs1 100000000 100000000 ribbon=no,thickness=5,color=black,z=10
+link5b hs2 120000000 120000000 ribbon=no,thickness=5,color=black,z=10

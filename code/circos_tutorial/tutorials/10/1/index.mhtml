@@ -1,0 +1,15 @@
+
+<%perl>
+use File::Basename;
+my $dir = dirname($r->document_root."/".$r->uri);
+open(F,"$dir/circos.html");
+my @map = <F>;
+</%perl>
+
+<% join("\n",@map) %>
+
+<img src="circos.png" usemap="#circos">
+
+<%flags>
+inherit=>undef
+</%flags>

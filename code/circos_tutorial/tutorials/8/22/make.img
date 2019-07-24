@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./colorinterpolate -scheme nature2 > colors.interpolated.conf
+circos -outputdir ~/www/htdocs/export

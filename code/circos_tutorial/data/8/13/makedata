@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat ../../../data/karyotype.human.hg19.txt | grep ^band | awk '{print $2,$5,$6,3*(1-2*rand())}' > data.cnv.txt

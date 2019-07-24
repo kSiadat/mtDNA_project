@@ -1,0 +1,11 @@
+cycle 4 4 cycle 9 9 type=1
+cycle 4 4 cycle 24 24 type=1
+cycle 4 4 cycle 31 31 type=1
+cycle 4 4 cycle 41 41 type=1
+cycle 87 87 cycle 91 91 type=2
+cycle 87 87 cycle 93 93 type=2
+cycle 87 87 cycle 59 59 type=2
+cycle 87 87 cycle 74 74 type=2
+cycle 87 87 cycle 4 4 type=2
+cycle 87 87 cycle 9 9 type=2
+cycle 87 87 cycle 24 24 type=2

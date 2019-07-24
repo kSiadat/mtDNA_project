@@ -1,0 +1,5 @@
+# A single segment will correspond
+# to the axis which contains the number
+# of GH in each species. The numbers
+# will be normalized so that their sum = 1000
+chr - gh gh 0 1000 black

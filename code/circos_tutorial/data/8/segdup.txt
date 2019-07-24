@@ -1,0 +1,16 @@
+# both ends forward
+segdup001 hs1 10e6 50e6
+segdup001 hs10 100e6 150e6
+# both ends forward, inverted flag 
+segdup002 hs1 100e6 150e6 inverted=1
+segdup002 hs10 10e6 50e6 inverted=1
+# first end reversed
+segdup003 hs2 50e6 10e6
+segdup003 hs9 10e6 50e6 
+# second end reversed
+segdup004 hs3 10e6 50e6
+segdup004 hs8 50e6 10e6 
+# both ends reversed
+segdup005 hs4 50e6 10e6 
+segdup005 hs6 50e6 10e6
+

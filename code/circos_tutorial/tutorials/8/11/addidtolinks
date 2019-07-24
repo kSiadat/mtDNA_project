@@ -1,0 +1,15 @@
+#!/home/martink/bin/perl510
+
+use strict;
+
+while(<>) {
+  chomp;
+  my @tok = split;
+  my $linkid = $tok[0];
+  my ($num) = $linkid =~ /_(\d+)/g;
+  
+  my $value = $num % 5;
+  
+  printf ("%s,url=%d\n",$_,$value);
+
+}

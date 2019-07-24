@@ -1,0 +1,48 @@
+# this link will appear twisted, but it is not 
+# considered inverted
+hs1 0 10000000 hs2 220000000 230000000 twist=1
+
+# this link has start < end for both ends,
+# and is therefore not inverted
+hs1 20000000 30000000 hs2 200000000 210000000 
+
+# this link has start < end for both ends,
+# and is therefore not initially inverted;
+# however, because of the inverted=1 flag 
+# for the first end, start/end coordinates for this
+# end reversed
+hs1 40000000 50000000 hs2 180000000 190000000 inverted1=1
+
+# this link has start > end for its first end
+# and is therefore considered inverted (var(rev1)=1)
+hs1 70000000 60000000 hs2 160000000 170000000
+
+# this link has start > end for its second end
+# and is therefore considered inverted (var(rev2)=1)
+hs1 80000000 90000000 hs2 150000000 140000000
+
+# this link has start > end for both ends
+hs1 110000000 100000000 hs2 130000000 120000000
+
+################################################################
+# explicitly draw line links between the start and end
+# positions of each link end
+
+hs1 0 0 hs2 220000000 220000000 ribbon=no,thickness=5,color=black,z=10
+hs1 10000000 10000000 hs2 230000000 230000000 ribbon=no,thickness=5,color=black,z=10
+
+hs1 20000000 20000000 hs2 200000000 200000000 ribbon=no,thickness=5,color=black,z=10
+hs1 30000000 30000000 hs2 210000000 210000000 ribbon=no,thickness=5,color=black,z=10
+
+hs1 40000000 40000000 hs2 180000000 180000000 ribbon=no,thickness=5,color=black,z=10
+hs1 50000000 50000000 hs2 190000000 190000000 ribbon=no,thickness=5,color=black,z=10
+
+hs1 70000000 70000000 hs2 160000000 160000000 ribbon=no,thickness=5,color=black,z=10
+hs1 60000000 60000000 hs2 170000000 170000000 ribbon=no,thickness=5,color=black,z=10
+
+hs1 80000000 80000000 hs2 150000000 150000000 ribbon=no,thickness=5,color=black,z=10
+hs1 90000000 90000000 hs2 140000000 140000000 ribbon=no,thickness=5,color=black,z=10
+
+hs1 110000000 110000000 hs2 130000000 130000000 ribbon=no,thickness=5,color=black,z=10
+hs1 100000000 100000000 hs2 120000000 120000000 ribbon=no,thickness=5,color=black,z=10
+

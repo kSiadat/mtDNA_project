@@ -1,0 +1,6 @@
+# from: center of a candidate's debate slice
+# to:   center of a candidate segment
+obama 150 150 clinton 750 750
+mccain 875 875 clinton 750 750
+huckabee 525 525 clinton 750 750
+

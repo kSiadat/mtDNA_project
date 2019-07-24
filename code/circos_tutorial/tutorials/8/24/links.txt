@@ -1,0 +1,7 @@
+# marker B
+1-chr1 22 22 2-chr1 0 0
+1-chr1 22 22 3-chr1 40 40
+2-chr1 0 0 3-chr1 40 40 
+# marker G
+1-chr1 155 155 3-chr1 134 134
+

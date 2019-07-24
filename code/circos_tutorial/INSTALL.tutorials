@@ -1,0 +1,34 @@
+
+*** Windows user?
+*** See http://www.circos.ca/documentation/tutorials/configuration/unix_vs_windows/
+
+Unpack the tutorial directory anywhere, but keep the data/ and
+tutorials/ directories within the same parent directory, as found in
+the archive.
+
+> tar cvfz circos-tutorials-0.61
+> cd circos-tutorials-0.61
+
+Data for tutorials is in data/ and the tutorial configuration in
+tutorials/. Data and configuration are kept separate - many
+tutorials use the same data.
+
+> cd tutorials/
+> cd 2/2
+
+Run each tutorial from the tutorial directory.
+
+> circos -conf circos.conf
+> cd ../3
+> circos -conf circos.conf
+
+Circos will guess the location if circos.conf. If the file is in your
+current directory, or in etc/, you don't need to use the -conf flag.
+
+> circos
+
+To create images of all lessons for a tutorial
+
+> cd tutorials
+> cd 2
+> ../makeimages

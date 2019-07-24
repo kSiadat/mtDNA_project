@@ -1,0 +1,13 @@
+#!/bin/bash
+
+i=0
+
+for bin in `seq 0 99`; do
+
+echo $bin
+
+cat hg18.genes.refseq.txt | ./bingenes -bin 500e3 -mult "100/(100-$bin)" > genes.$i.txt
+
+i=$((i+1))
+
+done

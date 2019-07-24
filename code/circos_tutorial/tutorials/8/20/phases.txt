@@ -1,0 +1,14 @@
+# phase lengths patterned after
+#
+# http://en.wikipedia.org/wiki/Cell_cycle
+#
+# G1  45%
+# S   35%
+# G2  15%
+# M   5%
+# 
+chr - g1 g1 0 100 greys-6-seq-3
+chr - s s 0 100 greys-6-seq-4
+chr - g2 g2 0 100 greys-6-seq-5
+chr - m m 0 100 greys-6-seq-6
+

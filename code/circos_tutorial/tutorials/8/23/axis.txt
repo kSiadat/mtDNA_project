@@ -1,0 +1,7 @@
+obama 0 2000
+richardson 0 1000
+clinton 0 1500
+mccain 0 1000
+romney 0 1750
+huckabee 0 1250
+
