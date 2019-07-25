@@ -31,13 +31,31 @@ def breakdown_table(table):
                 output.append([gene, start, end, strand])
     return output
 
+def create_karyotype(data):
+    text = ""
+    for d in range(len(data)):
+        if d != 0 and d%22 == 0:
+            colour = "x"
+        elif d != 0 and d%23 == 0:
+            colour = "y"
+        else:
+            colour = d+1
+            while colour > 23:
+                colour -=24
+            colour = str(colour)
+        text += "chr - mt" + str(d+1) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour +"\n"
+    file = open("../data/karyotype.mt.txt", "w+")
+    file.write(text)
+    file.close()
+
 path = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
 
 webFile = request.urlopen(path).read()
 html = bs(webFile, features = "html.parser")
 
-genes = []
+data = []
 for t in range(3):
     table = html.find_all("table")[t+1]
-    genes += breakdown_table(table)
+    data += breakdown_table(table)
 
+create_karyotype(data)
