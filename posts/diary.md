@@ -57,4 +57,4 @@ Today I have been parsing the [human mitochondrial genetics](https://en.wikipedi
 
 I have now finished parsing the [wiki page](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics), and I needed to look up [list concatenation](https://blog.usejournal.com/concatenating-two-lists-in-python-3cf9051da17f). But I still have to create a karyotype file for circos using the data.
 
-Have now created a mitochondrial genome karyotype file for circos to use.
+Have now created a mitochondrial genome karyotype file for circos, with help from the [circos tutorial](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) on karyotype file structure.
