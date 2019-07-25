@@ -28,7 +28,10 @@ def breakdown_table(table):
             end = nums[1]
             strand = data[d+2]
             if start != "":
-                output.append([gene, start, end, strand])
+                output.append([gene, int(start), end, strand])
+    output = sorted(output, key = lambda x: x[1])
+    for i in range(len(output)):
+        output[i][1] = str(output[i][1])
     return output
 
 def create_karyotype(data):
