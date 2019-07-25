@@ -51,3 +51,6 @@ Resized the labels on the diagrams to make them easier to read. I just guessed t
 Ran into a problem with not having the data used in 1 of the tutorials, then realised I have already downloaded the tutorials from circos, which come with the necessary data.
 
 Completed going through Quick start tutorial section.
+
+### 2019-07-25
+Today I have been parsing the [human mitochondrial genetics](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics) wiki page using [beautiful soup 4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to help me. It has been ok until now, where I have run into a problem; python is unable to use .split("-") properly, [this page](https://stackoverflow.com/questions/33307690/python-ascii-codec-cant-encode-en-dash) suggests that it could be because the text was originally in unicode and python was unable to convert a unicode '-' to an ASCII '-'.
