@@ -57,4 +57,6 @@ Today I have been parsing the [human mitochondrial genetics](https://en.wikipedi
 
 I have now finished parsing the [wiki page](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics), and I needed to look up [list concatenation](https://blog.usejournal.com/concatenating-two-lists-in-python-3cf9051da17f). But I still have to create a karyotype file for circos using the data.
 
-Have now created a mitochondrial genome karyotype file for circos, with help from the [circos tutorial](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) on karyotype file structure. Tested the first tutorial using the mitochondrial karytype file I created and it worked.
+Have now created a mitochondrial genome karyotype file for circos, with help from the [circos tutorial](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) on karyotype file structure.
+
+Tested the first tutorial using the mitochondrial karytype file I created and it worked. Tested the 2nd to see the labels but there is an issue, some of the genes seem to have multiple label which are illegible because they have been placed in the same place.
