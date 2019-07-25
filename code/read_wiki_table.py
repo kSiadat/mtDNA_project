@@ -36,17 +36,8 @@ path = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
 webFile = request.urlopen(path).read()
 html = bs(webFile, features = "html.parser")
 
-table1 = html.find_all("table")[1]
-genes1 = breakdown_table(table1)
-#for G in genes1:
-#    print(G)
+genes = []
+for t in range(3):
+    table = html.find_all("table")[t+1]
+    genes += breakdown_table(table)
 
-table2 = html.find_all("table")[2]
-genes2 = breakdown_table(table2)
-#for G in genes2:
-#    print(G)
-
-table3 = html.find_all("table")[3]
-genes3 = breakdown_table(table3)
-for G in genes3:
-    print(G)
