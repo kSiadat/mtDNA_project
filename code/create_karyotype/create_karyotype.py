@@ -29,13 +29,11 @@ def breakdown_table(table):
             strand = data[d+2]
             if start != "":
                 output.append([gene, int(start), end, strand])
-    output = sorted(output, key = lambda x: x[1])
-    for i in range(len(output)):
-        output[i][1] = str(output[i][1])
     return output
 
 def create_karyotype(data):
-    text = ""
+    #text = ""
+    text = "chr - mt1 MT 0 " + data[-1][2] + " white\n"
     for d in range(len(data)):
         if d != 0 and d%22 == 0:
             colour = "x"
@@ -46,19 +44,23 @@ def create_karyotype(data):
             while colour > 23:
                 colour -=24
             colour = str(colour)
-        text += "chr - mt" + str(d+1) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour +"\n"
-    file = open("../data/karyotype.mt.txt", "w+")
+        #text += "chr - mt" + str(d+1) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour +"\n"
+        text += "band mt1 gn" + (str(d+1)) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour + "\n"
+    file = open("../../data/karyotype.mt.txt", "w+")
     file.write(text)
     file.close()
 
-path = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
+url = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
 
-webFile = request.urlopen(path).read()
+webFile = request.urlopen(url).read()
 html = bs(webFile, features = "html.parser")
 
 data = []
 for t in range(3):
     table = html.find_all("table")[t+1]
     data += breakdown_table(table)
+data.sort(key = lambda x: x[1])
+for d in range(len(data)):
+    data[d][1] = str(data[d][1])
 
 create_karyotype(data)

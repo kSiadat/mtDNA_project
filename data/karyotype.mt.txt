@@ -1,4 +1,4 @@
-chr - mt1 MT 0 16023 chr1
+chr - mt1 MT 0 16023 white
 band mt1 gn1 TF 577 647 chr1
 band mt1 gn2 RNR1 648 1601 chr2
 band mt1 gn3 TV 1602 1670 chr3
