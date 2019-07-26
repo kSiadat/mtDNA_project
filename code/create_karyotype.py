@@ -32,7 +32,8 @@ def breakdown_table(table):
     return output
 
 def create_karyotype(data):
-    text = ""
+    #text = ""
+    text = "chr - mt1 MT 0 " + data[-1][2] + " chr1\n"
     for d in range(len(data)):
         if d != 0 and d%22 == 0:
             colour = "x"
@@ -43,7 +44,8 @@ def create_karyotype(data):
             while colour > 23:
                 colour -=24
             colour = str(colour)
-        text += "chr - mt" + str(d+1) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour +"\n"
+        #text += "chr - mt" + str(d+1) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour +"\n"
+        text += "band mt1 gn" + (str(d+1)) + " " + data[d][0] + " " + data[d][1] + " " + data[d][2] + " chr" + colour + "\n"
     file = open("../data/karyotype.mt.txt", "w+")
     file.write(text)
     file.close()
