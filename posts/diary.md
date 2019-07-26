@@ -69,3 +69,5 @@ Fixed the sorting of the karyotype file by putting the sort statement outside of
 Changed the karyotype file and ideogram configuration file so that there is 1 chromosome with multiple bands instead of multiple chromosomes, since 1 loop of mtDNA is 1 chromosome. Changed the chromosome colour to white so it is more seperate from the gene colours, also made the ideogram thicker.
 
 Wrote about obtaining the information needed to write a karyotype file, and so create a circos image of the human mitochondrial genome.
+
+Created data files for circos to use to create line plots for nucleobase proportions.
