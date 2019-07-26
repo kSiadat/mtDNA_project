@@ -60,3 +60,8 @@ I have now finished parsing the [wiki page](https://en.wikipedia.org/wiki/Human_
 Have now created a mitochondrial genome karyotype file for circos, with help from the [circos tutorial](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) on karyotype file structure.
 
 Tested the first tutorial using the mitochondrial karytype file I created and it worked. Tested the 2nd to see the labels but there is an issue, some of the genes seem to have multiple label which are illegible because they have been placed in the same place. The labels only loked like they were in the same place, actually the genes were so small that the labels were wider than them and so overlapped, I have fixed this but now there is a new problem where the labels extend off the edge of the image.
+
+### 2019-07-26
+Removed the MT- from the gene labels in the karyotype file since they just mean mitochondrial gene which you should know anyway if you are looking at the plots.
+
+Fixed the sorting of the karyotype file by putting the sort statement outside of the breakdown_table function so that the whole set of genes would be sorted, instead of having 3 subsets of sorted genes.
