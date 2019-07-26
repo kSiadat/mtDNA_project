@@ -70,4 +70,4 @@ Changed the karyotype file and ideogram configuration file so that there is 1 ch
 
 Wrote about obtaining the information needed to write a karyotype file, and so create a circos image of the human mitochondrial genome.
 
-Created data files for circos to use to create line plots for nucleobase proportions. Plotted nucleobase line plots on to circos image.
+Created data files for circos to use to create line plots for nucleobase proportions. Plotted nucleobase line plots on to circos image, tried to add axes to them but couldn't get them to position correctly.
