@@ -26,7 +26,7 @@ def write_file(genome, window, path):
     for b in range(len(fractions)):
         text = ""
         for f in range(len(fractions[b])):
-            text += f"chr1 {f} {f} {fractions[b][f]}\n"
+            text += f"mt1 {f} {f} {fractions[b][f]}\n"
         file = open(f"{path}_{window}_{bases[b]}.txt", "w+")
         file.write(text)
         file.close()
