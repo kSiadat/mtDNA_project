@@ -6,13 +6,13 @@ In order to create a circos image of the mitochondrial genome, circos needs a [k
 Circos didn't come with a karytotype file for mitochondria, and I didn't already have the information about the mitochondrial genome that would allow me to create a karyotype file. So I had to get it from somewhere.
 
 ## From the wikipedia page
-The first place that I tried to get information from was the wikipedia page on human mitochondrial genetics, which contains 3 tables about the location of each of the genes in the mitochondrial genome, as well as their name and strand (mitochondrial genomes have 2 seperate strands, the light and heavy).
+The first place that I tried to get information from was the wikipedia page on [human mitochondrial genetics](https://en.wikipedia.org/wiki/Human_mitochondrial_genetics), which contains 3 tables about the location of each of the genes in the mitochondrial genome, as well as their name and [strand](https://en.wikipedia.org/wiki/Mitochondrial_DNA#Genes_on_the_mtDNA_and_their_transcription).
 
-To do this I used the python modules urllib (which allows you to access webpages using a URL) and BeautifulSoup4 (bs4) (which allows you to easily parse html). Once I had read the webpage with urllib I used bs4 to zoom in on sections I wanted, then to break it down in to a format that I could extract the data from.
+To do this I used the python modules [urllib](https://docs.python.org/3/library/urllib.html) (which allows you to access webpages using a URL) and [BeautifulSoup4](https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python) (bs4) (which allows you to easily parse html). Once I had read the webpage with urllib I used bs4 to zoom in on sections I wanted, then to break it down in to a format that I could extract the data from.
 
-This works fine for that wiki page, however if I wanted to get the same information for a different species (e.g. yeast), I would have to parse a different wiki page and the tables it contains. Those tables would probably have a different format and so I woudl have to write a whole new program.
+This works fine for that wiki page, however if I wanted to get the same information for a different species (e.g. yeast), I would have to parse a different wiki page and the tables it contains. Those tables would probably have a different format and so I would have to write a whole new program.
 
 ## From the UCSC table browser
-The UCSC table browser is a way to access a database that contains the information I want and a lot more as well. It also stores all of the data in a standardised format which means I would only need 1 program to read all the data I need from it.
+The [UCSC table browser](http://genome.ucsc.edu/cgi-bin/hgTables) is a way to access a database that contains the information I want and a lot more as well. It also stores all of the data in a standardised format which means I would only need 1 program to read all the data I need from it.
 
 The problem is that it is quite hard to use as it contains a lot of technical biology terms and even the help guide doesn't entirley make sense to me.
