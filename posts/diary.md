@@ -65,3 +65,5 @@ Tested the first tutorial using the mitochondrial karytype file I created and it
 Removed the MT- from the gene labels in the karyotype file since they just mean mitochondrial gene which you should know anyway if you are looking at the plots.
 
 Fixed the sorting of the karyotype file by putting the sort statement outside of the breakdown_table function so that the whole set of genes would be sorted, instead of having 3 subsets of sorted genes.
+
+Changed the karyotype file and ideogram configuration file so that there is 1 chromosome with multiple bands instead of multiple chromosomes, since 1 loop of mtDNA is 1 chromosome.
