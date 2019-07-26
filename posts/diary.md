@@ -66,4 +66,6 @@ Removed the MT- from the gene labels in the karyotype file since they just mean 
 
 Fixed the sorting of the karyotype file by putting the sort statement outside of the breakdown_table function so that the whole set of genes would be sorted, instead of having 3 subsets of sorted genes.
 
-Changed the karyotype file and ideogram configuration file so that there is 1 chromosome with multiple bands instead of multiple chromosomes, since 1 loop of mtDNA is 1 chromosome.
+Changed the karyotype file and ideogram configuration file so that there is 1 chromosome with multiple bands instead of multiple chromosomes, since 1 loop of mtDNA is 1 chromosome. Changed the chromosome colour to white so it is more seperate from the gene colours, also made the ideogram thicker.
+
+Wrote about obtaining the information needed to write a karyotype file, and so create a circos image of the human mitochondrial genome.
