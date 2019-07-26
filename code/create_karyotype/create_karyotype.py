@@ -6,7 +6,7 @@ def breakdown_table(table):
         link = link[:-4]
         for c in range(len(link)):
             if link[len(link)-c-1] == ">":
-                return link[len(link)-c:]
+                return link[len(link)+3-c:]
 
     def extract_range(nums):
         if "(" in nums:
