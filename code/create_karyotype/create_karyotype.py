@@ -56,7 +56,7 @@ html = bs(webFile, features = "html.parser")
 data = []
 for t in range(3):
     table = html.find_all("table")[t+1]
-    data += breakdown_table(table)
+    data += breakdown_table(table) 
 data.sort(key = lambda x: x[1])
 for d in range(len(data)):
     data[d][1] = str(data[d][1])
