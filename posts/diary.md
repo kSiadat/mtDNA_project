@@ -76,4 +76,6 @@ Created data files for circos to use to create line plots for nucleobase proport
 Added circos diagrams where the line plots have window sizes of 100 and 500. Still haven't got the axes to work properly.
 
 ### 2019-08-05
-Finally fixed the axis (on the window size 10 diagram) so that they are orientated outwards. The problem occurred because the line plots' positions are relative to the ideograms size, but I had written them relative to the whole image size available. Also made the .conf files neater and more compact, and did the same for the other window sizes.#
+Finally fixed the axis (on the window size 10 diagram) so that they are orientated outwards. The problem occurred because the line plots' positions are relative to the ideograms size, but I had written them relative to the whole image size available. Also made the .conf files neater and more compact, and did the same for the other window sizes.
+
+Created edited the python program that creates the karyotype, and created an accompanying circos file to create a plot where the colour of each gene depends on the table of the wiki page it was from. Each table contains data about genes that code for different things (proteins, rRNAs, tRNAs).
