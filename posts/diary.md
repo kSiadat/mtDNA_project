@@ -74,3 +74,6 @@ Created data files for circos to use to create line plots for nucleobase proport
 
 ### 2019-07-27
 Added circos diagrams where the line plots have window sizes of 100 and 500. Still haven't got the axes to work properly.
+
+### 2019-08-05
+Finally fixed the axis so that they are orientated outwards. The problem occurred because the line plots' positions are relative to the ideograms size, but I had written them relative to the whole image size available.
