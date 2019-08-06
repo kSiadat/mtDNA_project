@@ -15,7 +15,7 @@ def subSeq(centre,window,seq):
     return(subseq)
 
 def plot(genome, window, interval):
-    #Plots a graph of each base and their frequency in each area of a genome
+    '''Plots a graph of each base and their frequency in each area of a genome'''
     bases = list(set(genome))
     if "N" in bases:
         del bases[bases.index("N")]
@@ -33,14 +33,23 @@ def plot(genome, window, interval):
     plt.tick_params(axis='both', which='major', labelsize=20)
     plt.show()
 
-path1="..\..\data\mtDNA.fa"
-path2="..\..\data\mtDNA_random.fa"
+def get_genome(path):
+    '''Obtains the genome using a given path'''
+    file = open(path,"r")
+    lines = [l.rstrip() for l in file.readlines()]
+    file.close()
+    return "".join(lines[1:])
 
-file = open(path2,"r")
-lines = [l.rstrip() for l in file.readlines()]
-file.close()
-genome = "".join(lines[1:])
+def plot_all(genome):
+    '''Contains window and interval values to plot'''
+    #plot(genome, 10, 1)
+    #plot(genome, 100, 1)
+    plot(genome, 500, 1)
 
-plot(genome, 10, 1)
-plot(genome, 100, 1)
-plot(genome, 500, 1)
+path = "..\..\data\mtDNA.fa"
+genome = get_genome(path)
+plot_all(genome)
+for x in range(3):
+    path = f"..\..\data\mtDNA_random_{x+1}.fa"
+    genome = get_genome(path)
+    plot_all(genome)

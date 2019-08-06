@@ -1,10 +1,16 @@
 import random as rn
 
-genome = "\n"
-bases = ["A", "C", "G", "T"]
-for b in range(16569):
-    genome += bases[rn.randint(0, len(bases)-1)]
+path="..\..\data\mtDNA.fa"
 
-file = open("../data/mtDNA_random.fa", "w+")
-file.write(genome)
+file = open(path, "r")
+lines = [l.rstrip() for l in file.readlines()]
 file.close()
+genome = list("".join(lines[1:]))
+
+for f in range(3):
+    rnGenome = genome[:]
+    rn.shuffle(rnGenome)
+    rnGenome = "\n" + "".join(rnGenome)
+    file = open(f"../../data/mtDNA_random_{f+1}.fa", "w+")
+    file.write(rnGenome)
+    file.close()
