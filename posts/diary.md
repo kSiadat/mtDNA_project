@@ -85,4 +85,4 @@ Rewrote the generate_mtDNA_genome.py program so that it works by reordering the 
 
 Created the new images, and edited the post to include them, and say a bit about the difference between them.
 
-Have been trying to get labels on the plot circos3, but haven't been able to get it to work.
+Have been trying to get labels on the plot circos3, but haven't been able to get it to work. It turns out the labels are too large but I can't seem to get them to be the right size.
