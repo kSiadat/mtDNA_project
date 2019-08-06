@@ -9,8 +9,10 @@ These images have a window size of 500, meaning that each point is the average f
 Actual genome:
 <img src="../images/base_plots/bases_500_1.png" alt="genome plot">
 
-Random genome:
-<img src="../images/base_plots/bases_random_500_1.png" alt="random genome plot">
+Random genomes:
+<img src="../images/base_plots/bases_random_500_1_v1.png" alt="random genome plot">
+<img src="../images/base_plots/bases_random_500_1_v2.png" alt="random genome plot">
+<img src="../images/base_plots/bases_random_500_1_v3.png" alt="random genome plot">
 
 <!--When looking at the plots that have a small window size, it is hard to understand the information properly because the lines fluctuate so much between each index position, and there are so many indexes represented in a relativley small space. So it looks very cramped and is hard to take in, which makes it impossible to tell the difference between the randomly generated and actual genomes.
 -->
