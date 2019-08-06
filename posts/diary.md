@@ -59,7 +59,7 @@ I have now finished parsing the [wiki page](https://en.wikipedia.org/wiki/Human_
 
 Have now created a mitochondrial genome karyotype file for circos, with help from the [circos tutorial](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) on karyotype file structure.
 
-Tested the first tutorial using the mitochondrial karytype file I created and it worked. Tested the 2nd to see the labels but there is an issue, some of the genes seem to have multiple label which are illegible because they have been placed in the same place. The labels only loked like they were in the same place, actually the genes were so small that the labels were wider than them and so overlapped, I have fixed this but now there is a new problem where the labels extend off the edge of the image.
+Tested the first tutorial using the mitochondrial karytype file I created and it worked. Tested the 2nd to see the labels but there is an issue, some of the genes seem to have multiple labels which are illegible because they have been placed in the same place. The labels only loked like they were in the same place, actually the genes were so small that the labels were wider than them and so overlapped, I have fixed this but now there is a new problem where the labels extend off the edge of the image.
 
 ### 2019-07-26
 Removed the MT- from the gene labels in the karyotype file since they just mean mitochondrial gene which you should know anyway if you are looking at the plots.
@@ -78,4 +78,7 @@ Added circos diagrams where the line plots have window sizes of 100 and 500. Sti
 ### 2019-08-05
 Finally fixed the axis (on the window size 10 diagram) so that they are orientated outwards. The problem occurred because the line plots' positions are relative to the ideograms size, but I had written them relative to the whole image size available. Also made the .conf files neater and more compact, and did the same for the other window sizes.
 
-Created edited the python program that creates the karyotype, and created an accompanying circos file to create a plot where the colour of each gene depends on the table of the wiki page it was from. Each table contains data about genes that code for different things (proteins, rRNAs, tRNAs). I would like to use a [legend](http://circos.ca/documentation/tutorials/2d_tracks/heat_maps/) but it turns out circos doesn't yet use legends.
+Edited the python program that creates the karyotype, and created an accompanying circos file to create a plot where the colour of each gene depends on the table of the wiki page it was from. Each table contains data about genes that code for different things (proteins, rRNAs, tRNAs). I would like to use a [legend](http://circos.ca/documentation/tutorials/2d_tracks/heat_maps/) but it turns out circos doesn't yet use legends.
+
+### 2019-08-06
+Rewrote the generate_mtDNA_genome.py program so that it works by reordering the original genome. Wrote a function to do this then realised there was already a [shuffle function](https://smallbusiness.chron.com/randomize-list-python-26724.html) in the [random](https://docs.python.org/3/library/random.html) module, so I changed the code to use that instead. I also changed the plot_mtDNA.py program so that it plots all of the graphs and you don't have to manually keep on changing the paths.
