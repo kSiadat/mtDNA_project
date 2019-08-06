@@ -20,4 +20,4 @@ Although the random and actual genomes are quite similar they are distinguishabl
 -->
 <!--However when looking at larger window sizes, you can see more interesting patterns. The randomly generated genome fluctuates a lot more than the actual genome, similarly to when looking at smaller window sizes, and in the actual genome some bases are more common than others on average, which is not true for the comlpetely random genome.
 -->
-You can find the [images](../images) and [code](../code) using these links.
+You can find the [images](../images/base_plots) and [code](../code/nucleobase_plots) using these links.
