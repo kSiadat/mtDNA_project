@@ -40,6 +40,14 @@ def create_karyotype(data):
     file.write(text)
     file.close()
 
+def create_karyotype_label(data):
+    text = ""
+    for d in range(len(data)):
+        text += "mt1" + " " + data[d][1] + " " + data[d][2] + " " + data[d][0] + "\n"
+    file = open("../../data/karyotype.mt.band_labels.txt", "w+")
+    file.write(text)
+    file.close()
+
 url = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
 
 webFile = request.urlopen(url).read()
@@ -54,3 +62,4 @@ for d in range(len(data)):
     data[d][1] = str(data[d][1])
 
 create_karyotype(data)
+create_karyotype_label(data)
