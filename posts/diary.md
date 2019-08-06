@@ -84,3 +84,5 @@ Edited the python program that creates the karyotype, and created an accompanyin
 Rewrote the generate_mtDNA_genome.py program so that it works by reordering the original genome. Wrote a function to do this then realised there was already a [shuffle function](https://smallbusiness.chron.com/randomize-list-python-26724.html) in the [random](https://docs.python.org/3/library/random.html) module, so I changed the code to use that instead. I also changed the plot_mtDNA.py program so that it plots all of the graphs and you don't have to manually keep on changing the paths.
 
 Created the new images, and edited the post to include them, and say a bit about the difference between them.
+
+Have been trying to get labels on the plot circos3, but haven't been able to get it to work.
