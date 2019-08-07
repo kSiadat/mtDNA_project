@@ -26,20 +26,20 @@ def write_file(genome, window, path):
     for b in range(len(fractions)):
         text = ""
         for f in range(len(fractions[b])):
-            text += f"mt1 {f} {f} {fractions[b][f]}\n"
+            if not (fractions[b][f]==fractions[b][f-1] and fractions[b][f]==fractions[b][(f+1)%len(fractions[b])]):
+                text += f"mt1 {f} {f} {fractions[b][f]}\n"
         file = open(f"{path}_{window}_{bases[b]}.txt", "w+")
         file.write(text)
         file.close()
 
 path1 = "..\\..\\data\\mtDNA.fa"
-path2 = "..\\..\\data\\mtDNA_random.fa"
-path3 = "..\\..\\data\\bases"
+path2 = "..\\..\\data\\bases"
 
-file = open(path2,"r")
+file = open(path1,"r")
 lines = [l.rstrip() for l in file.readlines()]
 file.close()
 genome = "".join(lines[1:])
 
-write_file(genome, 10, path3)
-write_file(genome, 100, path3)
-write_file(genome, 500, path3)
+write_file(genome, 10, path2)
+write_file(genome, 100, path2)
+write_file(genome, 500, path2)
