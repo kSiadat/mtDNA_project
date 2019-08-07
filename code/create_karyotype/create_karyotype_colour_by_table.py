@@ -20,6 +20,8 @@ def breakdown_table(table, order):
     output = []
     for d in range(len(data)):
         data[d] = str(data[d])[4:-6]
+    for d in data:
+        print(d)
     for d in range(len(data)):
         if data[d][:2] == "<a":
             gene = extract_name(data[d])
