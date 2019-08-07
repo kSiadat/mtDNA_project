@@ -20,8 +20,6 @@ def breakdown_table(table, order):
     output = []
     for d in range(len(data)):
         data[d] = str(data[d])[4:-6]
-    for d in data:
-        print(d)
     for d in range(len(data)):
         if data[d][:2] == "<a":
             gene = extract_name(data[d])
@@ -51,6 +49,7 @@ def create_karyotype_label(data):
     file.close()
 
 url = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
+#url = "https://www.ncbi.nlm.nih.gov/search/api/sequence/NC_012920"
 
 webFile = request.urlopen(url).read()
 html = bs(webFile, features = "html.parser")
