@@ -90,4 +90,4 @@ Have been trying to get labels on the plot circos3, but haven't been able to get
 ###2019-08-07
 Looked at downloading information using wget in python, and successfully downloaded a genome sequence in .fasta format.
 
-Increased the thickness of the line plots in circos, then fixed an error where the data generated for use was from the random genome instead of the actual genome.
+Increased the thickness of the line plots in circos, then fixed an error where the data generated for use was from the random genome instead of the actual genome. Also removed uneccessary data points to reduce the time taken to generate images and the file size of the data files.
