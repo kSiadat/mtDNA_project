@@ -86,3 +86,8 @@ Rewrote the generate_mtDNA_genome.py program so that it works by reordering the 
 Created the new images, and edited the post to include them, and say a bit about the difference between them.
 
 Have been trying to get labels on the plot circos3, but haven't been able to get it to work. It turns out it was because I put an ordinary number for the position instead of using the 'r' suffix to indicate relative to ideogram size. Made a lot of small adjustments to the label positions so that they look good. I have now been trying to get labels for larger genes to be parallel to the circle. However I can't understand rules properly nd how to use them, or how to do comparisons with them.
+
+###2019-08-07
+Looked at downloading information using wget in python, and successfully downloaded a genome sequence in .fasta format.
+
+Increased the thickness of the line plots in circos, then fixed an error where the data generated for use was from the random genome instead of the actual genome.
