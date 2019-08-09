@@ -104,3 +104,5 @@ Checked the length of the gene data, and the sequence, and found the sequence id
 Made subSeq a seperate module that is imported in to other programs, and tidied up some code.
 
 Changed the way the nucleobase plots work, as data is now extracted from the downloaded sequence file, and written as a seperate file in an easier format.
+
+Fixed the error where the line plots didn't reach all of the way around the circos diagram. Did so by making the part of the D-loop that went beyond the sequence length start again at 0. Because of the way circos works though, this has created an issue where it looks a bit wierd.
