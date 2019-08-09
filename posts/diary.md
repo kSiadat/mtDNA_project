@@ -102,3 +102,5 @@ Changed the code that gets the ncbi data. Made it more modular, and used the [os
 Checked the length of the gene data, and the sequence, and found the sequence id 16569 bp (base pairs) long, whereas the gene daat is 17145 bp long.
 
 Made subSeq a seperate module that is imported in to other programs, and tidied up some code.
+
+Changed the way the nucleobase plots work, as data is now extracted from the downloaded sequence file, and written as a seperate file in an easier format.
