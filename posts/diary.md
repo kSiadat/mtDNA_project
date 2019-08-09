@@ -95,7 +95,7 @@ Increased the thickness of the line plots in circos, then fixed an error where t
 Downloaded genome sequence and [.gff file](https://en.wikipedia.org/wiki/General_feature_format) using [wget](https://pypi.org/project/wget/) module in python. Wrote code to extract the data from the .gff file in list format, then rewrote it to be shorter when I realised all lines I wanted started with "NC_012920.1". Wrote code to extract only required data from .gff file. Used the downloaded data to create new karyotype file and file for creating gene labels. This has created an issue where the line plots are not long enough to fit all the way around the circle.
 
 ###2019-08-09
-Wrote in [obtaining_gene_location_data.md](post/obtaining_gene_location_data.md) about getting mtDNA sequence and .gff file from the [ncbi](https://www.ncbi.nlm.nih.gov/) database.
+Wrote in [obtaining_gene_location_data.md](../post/obtaining_gene_location_data.md) about getting mtDNA sequence and .gff file from the [ncbi](https://www.ncbi.nlm.nih.gov/) database.
 
 Changed the code that gets the ncbi data. Made it more modular, and used the [os module](https://docs.python.org/3/library/os.html) to allow me to check for existing files, and delete them if necessary, learnt how to do so from a [w3 schools tutorial](https://www.w3schools.com/python/python_file_remove.asp).
 
