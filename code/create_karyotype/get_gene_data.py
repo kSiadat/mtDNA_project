@@ -4,14 +4,10 @@ import wget
 import os
 
 
-def replace(path):
+def replace(link, path):
     if os.path.exists(path):
         os.remove(path)
-
-
-def download():
-    wget.download("https://www.ncbi.nlm.nih.gov/search/api/sequence/NC_012920.1", f"{path}{file_sequence}")
-    wget.download("https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id=NC_012920.1", f"{path}{file_gff}")
+    wget.download(link, path)
 
 
 def extract():
@@ -56,9 +52,8 @@ file_gff = "gene_data_raw.txt"
 desired = ["gene", "rRNA", "tRNA", "D_loop"]
 colours = ["dred", "vdgreen", "lblue", "lgrey"]
 
-replace(f"{path}{file_sequence}")
-replace(f"{path}{file_gff}")
-download()
+replace("https://www.ncbi.nlm.nih.gov/search/api/sequence/NC_012920.1", f"{path}{file_sequence}")
+replace("https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id=NC_012920.1", f"{path}{file_gff}")
 data = extract()
 karyotype(data)
 band_labels(data)
