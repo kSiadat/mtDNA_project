@@ -23,9 +23,9 @@ def plot(genome, window, interval):
 def get_genome(path):
     '''Obtains the genome using a given path'''
     file = open(path,"r")
-    lines = [l.rstrip() for l in file.readlines()]
+    genome = file.read()
     file.close()
-    return "".join(lines[1:])
+    return genome
 
 def plot_all(genome):
     '''Contains window and interval values to plot'''

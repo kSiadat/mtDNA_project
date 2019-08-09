@@ -10,8 +10,22 @@ def replace(link, path):
     wget.download(link, path)
 
 
-def extract():
-    file = open(f"{path}{file_gff}")
+def extract_sequence():
+    file = open(f"{path}{file_sequence}", "r")
+    lines = [l.rstrip() for l in file.readlines()]
+    file.close()
+    genome = "".join(lines[1:])
+    return genome
+
+
+def write_sequence(genome):
+    file = open(f"{path}mtDNA.fa", "w+")
+    file.write(genome)
+    file.close()
+
+
+def extract_genes():
+    file = open(f"{path}{file_gff}", "r")
     text = [line for line in file.readlines()]
     file.close()
 
@@ -28,7 +42,7 @@ def extract():
     return data
 
 
-def karyotype(data):
+def write_karyotype(data):
     text = f"chr - mt1 MT 0 {data[-1][2]} white\n"
     for d, D in enumerate(data):
         text += f"band mt1 gn{d+1} {D[0]} {D[1]} {D[2]} {colours[D[3]]}\n"
@@ -37,7 +51,7 @@ def karyotype(data):
     file.close()
 
 
-def band_labels(data):
+def write_band_labels(data):
     text = ""
     for d, D in enumerate(data):
         text += f"mt1 {D[1]} {D[2]} {D[0]}\n"
@@ -47,13 +61,17 @@ def band_labels(data):
 
 
 path = "../../data/"
-file_sequence = "mtDNA.fa"
+file_sequence = "mtDNA_raw.fa"
 file_gff = "gene_data_raw.txt"
 desired = ["gene", "rRNA", "tRNA", "D_loop"]
 colours = ["dred", "vdgreen", "lblue", "lgrey"]
 
 replace("https://www.ncbi.nlm.nih.gov/search/api/sequence/NC_012920.1", f"{path}{file_sequence}")
 replace("https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id=NC_012920.1", f"{path}{file_gff}")
-data = extract()
-karyotype(data)
-band_labels(data)
+
+genome = extract_sequence()
+write_sequence(genome)
+
+data = extract_genes()
+write_karyotype(data)
+write_band_labels(data)
