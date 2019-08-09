@@ -24,7 +24,7 @@ def write_sequence(genome):
     file.close()
 
 
-def extract_genes():
+def extract_genes(genome_length):
     file = open(f"{path}{file_gff}", "r")
     text = [line for line in file.readlines()]
     file.close()
@@ -39,11 +39,17 @@ def extract_genes():
         if text[d][2] == "D_loop":
             data[d][0] = "D-loop"
     data = [data[d] for d in range(len(data)) if data[d][0]!=data[(d+1)%len(data)][0]]
+
+    if int(data[-1][2]) > genome_length:
+        data.append(data[-1][:])
+        data[-1][1] = 0
+        data[-1][2] = str(int(data[-1][2]) - genome_length)
+        data[-2][2] = str(genome_length-1)
     return data
 
 
-def write_karyotype(data):
-    text = f"chr - mt1 MT 0 {data[-1][2]} white\n"
+def write_karyotype(data, genome_length):
+    text = f"chr - mt1 MT 0 {genome_length} white\n"
     for d, D in enumerate(data):
         text += f"band mt1 gn{d+1} {D[0]} {D[1]} {D[2]} {colours[D[3]]}\n"
     file = open(f"{path}karyotype.human.mt.txt", "w+")
@@ -54,7 +60,8 @@ def write_karyotype(data):
 def write_band_labels(data):
     text = ""
     for d, D in enumerate(data):
-        text += f"mt1 {D[1]} {D[2]} {D[0]}\n"
+        if data[d][0] != data[d-1][0]:
+            text += f"mt1 {D[1]} {D[2]} {D[0]}\n"
     file = open(f"{path}karyotype.human.mt.band_labels.txt", "w+")
     file.write(text)
     file.close()
@@ -72,6 +79,6 @@ replace("https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&
 genome = extract_sequence()
 write_sequence(genome)
 
-data = extract_genes()
-write_karyotype(data)
+data = extract_genes(len(genome))
+write_karyotype(data, len(genome))
 write_band_labels(data)
