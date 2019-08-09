@@ -99,7 +99,7 @@ Wrote in [obtaining_gene_location_data.md](../post/obtaining_gene_location_data.
 
 Changed the code that gets the ncbi data. Made it more modular, and used the [os module](https://docs.python.org/3/library/os.html) to allow me to check for existing files, and delete them if necessary, learnt how to do so from a [w3 schools tutorial](https://www.w3schools.com/python/python_file_remove.asp).
 
-Checked the length of the gene data, and the sequence, and found the sequence id 16569 bp (base pairs) long, whereas the gene daat is 17145 bp long.
+Checked the length of the gene data, and the sequence, and found the sequence id 16569 bp (base pairs) long, whereas the gene data is 17145 bp long.
 
 Made subSeq a seperate module that is imported in to other programs, and tidied up some code.
 
