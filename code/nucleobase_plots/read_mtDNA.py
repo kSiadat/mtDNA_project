@@ -13,6 +13,7 @@ class mtDNA_genome():
         self.genome_length = len(self.genome)
 
     def get_bases(self, start, end):
+        '''Returns the proportion of each base at each point within a window of the genome'''
         def limit(num):
             while num > self.genome_length:
                 num+=self.genome_length
