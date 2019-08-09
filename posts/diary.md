@@ -92,4 +92,13 @@ Looked at downloading information using wget in python, and successfully downloa
 
 Increased the thickness of the line plots in circos, then fixed an error where the data generated for use was from the random genome instead of the actual genome. Also removed uneccessary data points to reduce the time taken to generate images and the file size of the data files.
 
-Downloaded genome sequence and .gff file using wget module in python. Wrote code to extract the data from the .gff file in list format, then rewrote it to be shorter when I realised all lines I wanted started with "NC_012920.1". Wrote code to extract only required data from .gff file. Used the downloaded data to create new karyotype file and file for creating gene labels. This has created an issue where the line plots are not long enough to fit all the way around the circle.
+Downloaded genome sequence and [.gff file](https://en.wikipedia.org/wiki/General_feature_format) using [wget](https://pypi.org/project/wget/) module in python. Wrote code to extract the data from the .gff file in list format, then rewrote it to be shorter when I realised all lines I wanted started with "NC_012920.1". Wrote code to extract only required data from .gff file. Used the downloaded data to create new karyotype file and file for creating gene labels. This has created an issue where the line plots are not long enough to fit all the way around the circle.
+
+###2019-08-09
+Wrote in [obtaining_gene_location_data.md](post/obtaining_gene_location_data.md) about getting mtDNA sequence and .gff file from the [ncbi](https://www.ncbi.nlm.nih.gov/) database.
+
+Changed the code that gets the ncbi data. Made it more modular, and used the [os module](https://docs.python.org/3/library/os.html) to allow me to check for existing files, and delete them if necessary, learnt how to do so from a [w3 schools tutorial](https://www.w3schools.com/python/python_file_remove.asp).
+
+Checked the length of the gene data, and the sequence, and found the sequence id 16569 bp (base pairs) long, whereas the gene daat is 17145 bp long.
+
+Made subSeq a seperate module that is imported in to other programs, and tidied up some code.
