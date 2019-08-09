@@ -1,18 +1,5 @@
 import matplotlib.pyplot as plt
-
-def subSeq(centre,window,seq):
-    '''Get a windowed subset of a circular string/sequence'''
-    start = centre - window
-    end = centre + window
-    if start >= 0 and end < len(seq):
-        subseq = seq[start:(end+1)]
-    elif start < 0 and end >= len(seq):
-        subseq = seq[start:]+seq+seq[0:(end-len(seq)+1)]
-    elif start < 0:
-        subseq = seq[start:]+seq[0:(end+1)]
-    elif end >= len(seq):
-        subseq = seq[start:]+seq[0:(end-len(seq)+1)]
-    return(subseq)
+from subSeq import subSeq
 
 def plot(genome, window, interval):
     '''Plots a graph of each base and their frequency in each area of a genome'''
