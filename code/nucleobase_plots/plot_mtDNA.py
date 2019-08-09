@@ -2,9 +2,9 @@ import matplotlib.pyplot as plt
 from subSeq import subSeq
 
 def plot(genome, window, interval):
-    '''Plots a graph of each base and their frequency in each area of a genome'''
+    '''Plots each base and their frequency in each area of a genome'''
     bases = list(set(genome))
-    if "N" in bases:
+    if "N" in bases: # Is this condition necessary?
         del bases[bases.index("N")]
     bases.sort()
 
@@ -19,24 +19,26 @@ def plot(genome, window, interval):
     plt.ylabel("Proportion of base", fontsize=30)
     plt.tick_params(axis='both', which='major', labelsize=20)
     plt.show()
+	# Need to fix ranges somehow: 0% to 45%?
 
-def get_genome(path):
+def get_genome(path): # Again better to use accession number here 
     '''Obtains the genome using a given path'''
     file = open(path,"r")
     genome = file.read()
     file.close()
-    return genome
+    return genome # Move this useful file and import it 
 
-def plot_all(genome):
+def plot_all(genome,windows = [10,100,500]):
     '''Contains window and interval values to plot'''
-    #plot(genome, 10, 1)
-    #plot(genome, 100, 1)
-    plot(genome, 500, 1)
-
-path = "..\..\data\mtDNA.fa"
+	for w in windows: plot(genome, w, 1)
+	
+path = "..\..\data\mtDNA.fa" # Accession number
+windows = [10,100,500]
+Nshuffle = 3
 genome = get_genome(path)
-plot_all(genome)
-for x in range(3):
-    path = f"..\..\data\mtDNA_random_{x+1}.fa"
+
+plot_all(genome,windows)
+for x in range(Nshuffle):
+    path = f"..\..\data\mtDNA_random_{x+1}.fa" # Move this to top of script
     genome = get_genome(path)
-    plot_all(genome)
+    plot_all(genome,windows)
