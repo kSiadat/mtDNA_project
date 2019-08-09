@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup as bs # are you using this?
 from urllib import request
 import wget
 import os
@@ -18,13 +17,13 @@ def extract_sequence(path): # Move to utility script, added argument!
     return genome
 
 
-def write_sequence(genome, path): # added argument
+def write_sequence(genome, path):
     file = open(f"{path}mtDNA.fa", "w+")
     file.write(genome)
     file.close()
 
 
-def extract_genes(genome_length, path,accession, desired = ["gene", "rRNA", "tRNA", "D_loop"]):# added argument
+def extract_genes(genome_length, path, accession, desired = ["gene", "rRNA", "tRNA", "D_loop"]):
     file = open(f"{path}{file_gff}", "r")
     text = [line for line in file.readlines()]
     file.close()
@@ -48,7 +47,7 @@ def extract_genes(genome_length, path,accession, desired = ["gene", "rRNA", "tRN
     return data
 
 
-def write_karyotype(data, genome_length, colours = ["dred", "vdgreen", "lblue", "lgrey"]): #new arguments
+def write_karyotype(data, genome_length, colours = ["dred", "vdgreen", "lblue", "lgrey"]):
     text = f"chr - mt1 MT 0 {genome_length} white\n"
     for d, D in enumerate(data):
         text += f"band mt1 gn{d+1} {D[0]} {D[1]} {D[2]} {colours[D[3]]}\n"
@@ -84,9 +83,9 @@ file_gff = "gene_data_raw.txt"
 replace(f"https://www.ncbi.nlm.nih.gov/search/api/sequence/{accession}", f"{path}{file_sequence}")
 replace(f"https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id={accession}", f"{path}{file_gff}")
 
-genome = extract_sequence()
-write_sequence(genome)
+genome = extract_sequence(path)
+write_sequence(genome, path)
 
-data = extract_genes(len(genome))
-write_karyotype(data, len(genome))
-write_band_labels(data, len(genome))
+data = extract_genes(len(genome), path)
+write_karyotype(data, len(genome), path)
+write_band_labels(data, len(genome), path)

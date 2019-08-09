@@ -19,7 +19,7 @@ def write_file(genome, window, path):
   file.write(text)
   file.close()
 
-# Split function above into two: a more general function about writing circos.txt files and a specfico one about base proportions
+# Split function above into two: a more general function about writing circos.txt files and a specfic one about base proportions
 
 # Consider go from 4 space delimiter to 2
 
