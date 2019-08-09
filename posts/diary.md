@@ -107,4 +107,4 @@ Changed the way the nucleobase plots work, as data is now extracted from the dow
 
 Fixed the error where the line plots didn't reach all of the way around the circos diagram. Did so by making the part of the D-loop that went beyond the sequence length start again at 0. Because of the way circos works though, this has created an issue where it looks a bit wierd.
 
-Added lines to seperate the different genes on the circos diagram, and changed the outline colour to black so it is more visible.
+Added lines to seperate the different genes on the circos diagram, and changed the outline colour to black so it is more visible. Made the D-loop label be in a better position.
