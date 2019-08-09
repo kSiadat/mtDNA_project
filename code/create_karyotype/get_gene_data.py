@@ -47,7 +47,7 @@ def extract_genes(genome_length, path, accession, desired = ["gene", "rRNA", "tR
     return data
 
 
-def write_karyotype(data, genome_length, colours = ["dred", "vdgreen", "lblue", "lgrey"]):
+def write_karyotype(data, genome_length, path, colours = ["dred", "vdgreen", "lblue", "lgrey"]):
     text = f"chr - mt1 MT 0 {genome_length} white\n"
     for d, D in enumerate(data):
         text += f"band mt1 gn{d+1} {D[0]} {D[1]} {D[2]} {colours[D[3]]}\n"
@@ -56,7 +56,7 @@ def write_karyotype(data, genome_length, colours = ["dred", "vdgreen", "lblue", 
     file.close()
 
 
-def write_band_labels(data, genome_length):
+def write_band_labels(data, genome_length, path):
     text = ""
     for d, D in enumerate(data):
         if data[d][0] != data[d-1][0]:

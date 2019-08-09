@@ -1,4 +1,4 @@
-def subSeq(centre,window,seq):
+def subSeq(centre, window, seq):
     '''Get a windowed subset of a circular string/sequence'''
     start = centre - window
     end = centre + window
