@@ -15,7 +15,7 @@ def subSeq(centre,window,seq):
     return(subseq)
 
 def write_file(genome, window, path):
-    #Creates a text file for circos containing the data needed to plot a line plot of the proportions of a base
+    '''Creates a text file for circos containing the data needed to plot a line plot of the proportions of a base'''
     bases = list(set(genome))
     if "N" in bases:
         del bases[bases.index("N")]
