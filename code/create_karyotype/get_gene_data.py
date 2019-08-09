@@ -40,7 +40,7 @@ def extract_genes(genome_length):
             data[d][0] = "D-loop"
     data = [data[d] for d in range(len(data)) if data[d][0]!=data[(d+1)%len(data)][0]]
 
-    if int(data[-1][2]) > genome_length:
+    if int(data[-1][2]) >= genome_length:
         data.append(data[-1][:])
         data[-1][1] = 0
         data[-1][2] = str(int(data[-1][2]) - genome_length)
@@ -57,11 +57,17 @@ def write_karyotype(data, genome_length):
     file.close()
 
 
-def write_band_labels(data):
+def write_band_labels(data, genome_length):
     text = ""
     for d, D in enumerate(data):
         if data[d][0] != data[d-1][0]:
-            text += f"mt1 {D[1]} {D[2]} {D[0]}\n"
+            if data[d][0] == data[d+1][0]:
+                centre = (int(data[d][1]) + int(data[d+1][2]) + genome_length) // 2
+                if centre >= genome_length:
+                    centre -= genome_length
+                text += f"mt1 {centre} {centre} {D[0]}\n"
+            else:
+                text += f"mt1 {D[1]} {D[2]} {D[0]}\n"
     file = open(f"{path}karyotype.human.mt.band_labels.txt", "w+")
     file.write(text)
     file.close()
@@ -81,4 +87,4 @@ write_sequence(genome)
 
 data = extract_genes(len(genome))
 write_karyotype(data, len(genome))
-write_band_labels(data)
+write_band_labels(data, len(genome))
