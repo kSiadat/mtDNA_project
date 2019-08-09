@@ -15,3 +15,5 @@ This project is about visualising and annotating circular mtDNA genomes.
  + [Obtaining data about the location of genes in the mitochondrial genome](posts/obtaining_gene_location_data.md)
  	+ Why is that data important?
 	+ How to get the data
+
+I have recieved support from the Wellcome Centre for Mitochondrial Research, based at Newcastle University.
