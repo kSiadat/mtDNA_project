@@ -15,4 +15,9 @@ This works fine for that wiki page, however if I wanted to get the same informat
 ## From the UCSC table browser
 The [UCSC table browser](http://genome.ucsc.edu/cgi-bin/hgTables) is a way to access a database that contains the information I want and a lot more as well. It also stores all of the data in a standardised format which means I would only need 1 program to read all the data I need from it.
 
-The problem is that it is quite hard to use as it contains a lot of technical biology terms and even the help guide doesn't entirley make sense to me.
+The problem is that it is quite hard to use as it contains a lot of technical biology terms and even the help guide doesn't entirley make sense to me. It is also harder to do programmatically, so I have chosen not to use this option.
+
+## From the NCBI database
+The [NCBI](https://www.ncbi.nlm.nih.gov/) (National Centre for Biotechnology Information) has lots of data stored about many different kinds of genome. They have a complete mtDNA sequence as well as a [.gff](https://en.wikipedia.org/wiki/General_feature_format) file.
+
+Using the wget module in python I was able to download both of them, and then I had to parse them. For the mtDNA sequence I could use the program I already had for that purpose since the file was in the same format as the file for the sequence I was using already. The .gff file was a bit trickier as I had to write a new program and the format was more complex, but I still managed to extract the necessary data to create a karyotype file and a gene label file.
