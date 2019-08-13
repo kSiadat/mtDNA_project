@@ -16,9 +16,6 @@ def extract_genes(accession, text, genomeLength, desired = ["gene", "rRNA", "tRN
             data[d][0] = "D-loop"
     data = [data[d] for d in range(len(data)) if data[d][0]!=data[(d+1)%len(data)][0]]
 
-    for D in data:
-        print(D)
-
     if int(data[-1][2]) >= genomeLength:
         data.append(data[-1][:])
         data[-1][1] = 0
@@ -53,7 +50,6 @@ def write_band_labels(accession, path, data, genomeLength):
 def get_gene_data(accession, path):
     genomeLength = len(get_genome(accession))
     text = get_gff(accession)
-    print(text)
 
     data = extract_genes(accession, text, genomeLength)
     print("Extracted gene data")

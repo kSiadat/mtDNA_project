@@ -93,8 +93,8 @@ def create_plots(data):
     return conf_plots
 
 
-#accession = "NC_012920.1"
-accession = "NC_005089.1"
+accession = "NC_012920.1"
+#accession = "NC_005089.1"
 path = "../data/temp/"
 
 conf_ideogram = create_ideogram(0.6, 0.075)
@@ -107,7 +107,7 @@ colours = ["blue", "orange", "green", "red"]
 for x in range(len(bases)):
     temp = ["line", f"{path}{accession}_linePlot_100_{bases[x]}.txt", 1.22, 1.6, 0, 0.5, colours[x], None, None]
     if x==0:
-       # temp[7] = [[0.1, "grey"], [0.5, "vdgrey"]]
+        temp[7] = [[0.1, "grey"], [0.5, "vdgrey"]]
         temp[8] = [accession, path, [100]]
     plots.append(temp)
 conf_plots = create_plots(plots)
