@@ -59,6 +59,7 @@ def create_plots(data):
             label_font = sans_serif
             color      = black
             label_size = 40p
+            label_parallel = yes
 
     	    show_links     = yes
 	    link_color     = black
