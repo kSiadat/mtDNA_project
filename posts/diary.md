@@ -113,4 +113,4 @@ Added lines to seperate the different genes on the circos diagram, and changed t
 Today I have been working on going through all of the code and improving it, the changes include accessing all the data from the internet using an accession number, importing code used multiple times from a utilities script, removing uses of global variables, etc.
 
 ### 2019-08-13
-This morning I finished improving the existing code.
+This morning I finished improving the existing code. I then deleted all the contents of the data and image folders and remade them using the new improved code.
