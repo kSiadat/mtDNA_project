@@ -19,7 +19,7 @@ def write_plotData(accession, path, fractions, bases, window):
         for f in range(len(fractions[b])):
             if not (fractions[b][f]==fractions[b][f-1] and fractions[b][f]==fractions[b][(f+1)%len(fractions[b])]):
                 text += f"mt1 {f} {f} {fractions[b][f]}\n"
-        write_file(f"{path}{accession}_{window}_{bases[b]}.txt", text)
+        write_file(f"{path}{accession}_linePlot_{window}_{bases[b]}.txt", text)
 
 
 accession = "NC_012920.1"

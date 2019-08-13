@@ -1,4 +1,4 @@
-chr - mt1 MT 0 16569 white
+chr - mt1 MT 0 16568 white
 band mt1 gn1 TRNF 577 647 lblue
 band mt1 gn2 RNR1 648 1601 vdgreen
 band mt1 gn3 TRNV 1602 1670 lblue
