@@ -1,4 +1,4 @@
-from mtdna_utilities import get_genome, get_webData, write_file
+from mtdna_utilities import get_genome, get_gff, get_webData, write_file
 import os
 from urllib import request
 
@@ -49,8 +49,8 @@ def write_band_labels(accession, path, data, genomeLength):
 
 def get_gene_data(accession, path):
     genomeLength = len(get_genome(accession))
+    text = get_gff(accession)
 
-    text = get_webData(f"https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id={accession}")
     data = extract_genes(accession, text, genomeLength)
     print("Extracted gene data")
     write_karyotype(accession, path, data, genomeLength)

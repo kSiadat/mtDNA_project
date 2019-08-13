@@ -44,6 +44,10 @@ def get_genome(accession):
     '''Gets text using a url then returns the genome as a string'''
     return "".join(str(get_webData(f"https://www.ncbi.nlm.nih.gov/search/api/sequence/{accession}")).split("\\r\\n")[1:])[:-1]
 
+def get_gff(accession):
+    '''Gets a raw gff file in text'''
+    return get_webData(f"https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id={accession}")
+
 def generate_genome(genome):
     '''Reshuffles an existing genome in to a random order'''
     genome = list(genome)
