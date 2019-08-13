@@ -1,3 +1,9 @@
+import os
+import random
+from bs4 import BeautifulSoup as bs
+from urllib import request
+
+
 def subSeq(centre, window, seq):
     '''Get a windowed subset of a circular string/sequence'''
     start = centre - window
@@ -11,3 +17,38 @@ def subSeq(centre, window, seq):
     elif end >= len(seq):
         subseq = seq[start:]+seq[0:(end-len(seq)+1)]
     return(subseq)
+
+def write_file(path, text):
+    '''Takes a path including filename and writes text to that file'''
+    file = open(path, "w+")
+    file.write(text)
+    file.close()
+
+def download(path, url):
+    '''Deletes the file if it exists, then downloads it'''
+    if os.path.exists(path):
+        os.remove(path)
+    wget.download(path, url)
+
+def get_webData(url, html=False):
+    '''Gets the text from a url'''
+    text = request.urlopen(url).read()
+    if html:
+        return bs(text, features="html.parser")
+    return text
+
+def get_genome(accession):
+    '''Gets text using a url then returns the genome as a string'''
+    return "".join(str(get_webData(f"https://www.ncbi.nlm.nih.gov/search/api/sequence/{accession}")).split("\\r\\n")[1:])[:-1]
+
+def generate_genome(genome):
+    '''Reshuffles an existing genome in to a random order'''
+    genome = list(genome)
+    random.shuffle(genome)
+    return "".join(genome)
+
+def calc_fractions(genome, window):
+    '''Calculates the fractions each base a long a genome'''
+    bases = list(set(genome))
+    bases.sort()
+    return [[subSeq(i,window,genome).count(base)/(2*window + 1) for i in range(len(genome))] for base in bases if base!="N"]

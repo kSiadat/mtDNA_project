@@ -1,7 +1,10 @@
+from mtdna_utilities import get_webData
 from bs4 import BeautifulSoup as bs
 from urllib import request
 
+
 def breakdown_table(table):
+    '''Returns the data required from the wiki tables'''
     def extract_name(link):
         link = link[:-4]
         for c in range(len(link)):
@@ -31,10 +34,9 @@ def breakdown_table(table):
                 output.append([gene, start, end, strand])
     return output
 
-path = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
 
-webFile = request.urlopen(path).read()
-html = bs(webFile, features = "html.parser")
+url = "https://en.wikipedia.org/wiki/Human_mitochondrial_genetics"
+html = get_webData(url, html=True)
 
 genes = []
 for t in range(3):
