@@ -24,10 +24,13 @@ def write_file(path, text):
     file.write(text)
     file.close()
 
-def download(path, url):
-    '''Deletes the file if it exists, then downloads it'''
+def delete(path):
     if os.path.exists(path):
         os.remove(path)
+
+def download(path, url):
+    '''Deletes the file if it exists, then downloads it'''
+    delete(path)
     wget.download(path, url)
 
 def get_webData(url, html=False):

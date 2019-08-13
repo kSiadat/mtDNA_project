@@ -1,4 +1,7 @@
 from mtdna_utilities import write_file
+from create_line_plot_data import create_linePlot_data
+from get_gene_data import get_gene_data
+
 
 def create_ideogram(radius=0.6, thickness=0.075):
     conf_ideogram = f"""
@@ -44,7 +47,7 @@ def create_axes(data):
 
 
 def create_plots(data):
-    #Data in format [[type=text, file, r0, r1],  [type=line, file, r0, r1, min, max, color, axes]]
+    #Data in format [[type=text, file, r0, r1],  [type=line, file, r0, r1, min, max, color, axes, [accession, path, windows]]
     conf_plots = "<plots>\n"
     for D in data:
         conf_plots += "<plot>\n type = D[0]"
@@ -72,6 +75,8 @@ def create_plots(data):
 	    """
 
         if D[0] == "line":
+            if D[8]!=None:
+                create_linePlot_data(D[8][0], D[8][1], D[8][2])
             conf_plots += f"""
             file      = {D[1]}
             r0        = {D[2]}r
@@ -88,20 +93,25 @@ def create_plots(data):
 
 
 accession = "NC_012920.1"
+path = "../data/temp/"
 
 conf_ideogram = create_ideogram(0.6, 0.075)
-
 conf_image = create_image("../images/circos", "circos1")
 
-plots = [["text", "../data/karyotype.NC_012920.1.band_labels.txt", 1, 1.2]]
+get_gene_data(accession, path)
+plots = [["text", f"{path}karyotype.{accession}.band_labels.txt", 1, 1.2]]
 bases = ["A", "C", "G", "T"]
 colours = ["blue", "orange", "green", "red"]
 for x in range(len(bases)):
-    plots.append(["line", f"../data/{accession}_linePlot_100_{bases[x]}.txt", 1.22, 1.6, 0, 0.5, colours[x], [[0.1, "grey"], [0.5, "vdgrey"]]])
+    temp = ["line", f"{path}{accession}_linePlot_100_{bases[x]}.txt", 1.22, 1.6, 0, 0.5, colours[x], None, None]
+    if x==0:
+        temp[7] = [[0.1, "grey"], [0.5, "vdgrey"]]
+        temp[8] = [accession, path, [100]]
+    plots.append(temp)
 conf_plots = create_plots(plots)
 
 main = f"""
-karyotype = ../data/karyotype.{accession}.txt
+karyotype = {path}karyotype.{accession}.txt
 
 chromosomes_units = 1000000
 

@@ -22,14 +22,18 @@ def write_plotData(accession, path, fractions, bases, window):
         write_file(f"{path}{accession}_linePlot_{window}_{bases[b]}.txt", text)
 
 
-accession = "NC_012920.1"
-path = "../data/"
+def create_linePlot_data(accession, path, windows):
+    genome = get_genome(accession)
+    print(f"Length of genome: {len(genome)}")
+    for x in range(len(windows)):
+        fractions, bases = calc_fractions(genome, windows[x])
+        write_plotData(accession, path, fractions, bases, windows[x])
+        print(f"Completed window {windows[x]}")
+    print()
 
-genome = get_genome(accession)
-print(f"Length of genome: {len(genome)}")
-windows = [10, 100, 500]
 
-for x in range(len(windows)):
-    fractions, bases = calc_fractions(genome, windows[x])
-    write_plotData(accession, path, fractions, bases, windows[x])
-    print(f"Completed window {windows[x]}")
+if __name__ == "__main__":
+    accession = "NC_012920.1"
+    path = "../data/"
+    windows = [10, 100, 500]
+    create_linePlot_data(accession, path, windows)

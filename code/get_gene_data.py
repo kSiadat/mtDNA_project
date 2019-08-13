@@ -47,11 +47,19 @@ def write_band_labels(accession, path, data, genomeLength):
     write_file(f"{path}karyotype.{accession}.band_labels.txt", text)
 
 
-accession = "NC_012920.1"
-path = "../data/"
-genomeLength = len(get_genome(accession))
+def get_gene_data(accession, path):
+    genomeLength = len(get_genome(accession))
 
-text = get_webData(f"https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id={accession}")
-data = extract_genes(accession, text, genomeLength)
-write_karyotype(accession, path, data, genomeLength)
-write_band_labels(accession, path, data, genomeLength)
+    text = get_webData(f"https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?db=nuccore&report=gff3&id={accession}")
+    data = extract_genes(accession, text, genomeLength)
+    print("Extracted gene data")
+    write_karyotype(accession, path, data, genomeLength)
+    print("Created karyotype file")
+    write_band_labels(accession, path, data, genomeLength)
+    print("Created gene label file\n")
+
+
+if __name__ == "__main__":
+    accession = "NC_012920.1"
+    path = "../data/"
+    get_gene_data(accession, path)
