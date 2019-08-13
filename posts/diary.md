@@ -87,14 +87,14 @@ Created the new images, and edited the post to include them, and say a bit about
 
 Have been trying to get labels on the plot circos3, but haven't been able to get it to work. It turns out it was because I put an ordinary number for the position instead of using the 'r' suffix to indicate relative to ideogram size. Made a lot of small adjustments to the label positions so that they look good. I have now been trying to get labels for larger genes to be parallel to the circle. However I can't understand rules properly nd how to use them, or how to do comparisons with them.
 
-###2019-08-07
+### 2019-08-07
 Looked at downloading information using wget in python, and successfully downloaded a genome sequence in .fasta format.
 
 Increased the thickness of the line plots in circos, then fixed an error where the data generated for use was from the random genome instead of the actual genome. Also removed uneccessary data points to reduce the time taken to generate images and the file size of the data files.
 
 Downloaded genome sequence and [.gff file](https://en.wikipedia.org/wiki/General_feature_format) using [wget](https://pypi.org/project/wget/) module in python. Wrote code to extract the data from the .gff file in list format, then rewrote it to be shorter when I realised all lines I wanted started with "NC_012920.1". Wrote code to extract only required data from .gff file. Used the downloaded data to create new karyotype file and file for creating gene labels. This has created an issue where the line plots are not long enough to fit all the way around the circle.
 
-###2019-08-09
+### 2019-08-09
 Wrote in [obtaining_gene_location_data.md](../post/obtaining_gene_location_data.md) about getting mtDNA sequence and .gff file from the [ncbi](https://www.ncbi.nlm.nih.gov/) database.
 
 Changed the code that gets the ncbi data. Made it more modular, and used the [os module](https://docs.python.org/3/library/os.html) to allow me to check for existing files, and delete them if necessary, learnt how to do so from a [w3 schools tutorial](https://www.w3schools.com/python/python_file_remove.asp).
@@ -108,3 +108,9 @@ Changed the way the nucleobase plots work, as data is now extracted from the dow
 Fixed the error where the line plots didn't reach all of the way around the circos diagram. Did so by making the part of the D-loop that went beyond the sequence length start again at 0. Because of the way circos works though, this has created an issue where it looks a bit wierd.
 
 Added lines to seperate the different genes on the circos diagram, and changed the outline colour to black so it is more visible. Made the D-loop label be in a better position.
+
+### 2019-08-12
+Today I have been working on going through all of the code and improving it, the changes include accessing all the data from the internet using an accession number, importing code used multiple times from a utilities script, removing uses of global variables, etc.
+
+### 2019-08-13
+This morning I finished improving the existing code.
