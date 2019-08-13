@@ -93,7 +93,8 @@ def create_plots(data):
     return conf_plots
 
 
-accession = "NC_012920.1"
+#accession = "NC_012920.1"
+accession = "NC_005089.1"
 path = "../data/temp/"
 
 conf_ideogram = create_ideogram(0.6, 0.075)
