@@ -1,7 +1,7 @@
 from mtdna_utilities import write_file
 from create_line_plot_data import create_linePlot_data
 from get_gene_data import get_gene_data
-
+import os
 
 def create_ideogram(radius=0.6, thickness=0.075):
     conf_ideogram = f"""
@@ -50,7 +50,7 @@ def create_plots(data):
     #Data in format [[type=text, file, r0, r1],  [type=line, file, r0, r1, min, max, color, axes, [accession, path, windows]]
     conf_plots = "<plots>\n"
     for D in data:
-        conf_plots += "<plot>\n type = D[0]"
+        conf_plots += f"<plot>\n type = {D[0]}"
         if D[0] == "text":
             conf_plots += f"""
             file       = {D[1]}
@@ -96,7 +96,7 @@ accession = "NC_012920.1"
 path = "../data/temp/"
 
 conf_ideogram = create_ideogram(0.6, 0.075)
-conf_image = create_image("../images/circos", "circos1")
+conf_image = create_image("../images/circos", accession)
 
 get_gene_data(accession, path)
 plots = [["text", f"{path}karyotype.{accession}.band_labels.txt", 1, 1.2]]
@@ -124,3 +124,4 @@ chromosomes_units = 1000000
 """
 
 write_file("circos.conf", main)
+#os.system("circos -conf circos.conf -noparanoid")
