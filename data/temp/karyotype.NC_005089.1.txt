@@ -37,4 +37,4 @@ band mt1 gn35 CYTB 14145 15288 dred
 band mt1 gn36 TrnT 15289 15355 lblue
 band mt1 gn37 TrnP 15356 15422 lblue
 band mt1 gn38 D-loop 15423 16298 lgrey
-band mt1 gn39 D-loop 0 0 lgrey
+band mt1 gn39 D-loop 0 1 lgrey
