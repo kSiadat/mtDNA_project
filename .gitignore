@@ -30,3 +30,6 @@ code/circos_tutorial/tutorials/Thumbs.db
 images/circos/Thumbs.db
 code/circos_tutorial/tutorials/6/4/Thumbs.db
 code/circos_tutorial/tutorials/6/Thumbs.db
+*.pyc
+*.pyc
+*.pyc
