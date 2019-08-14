@@ -16,4 +16,9 @@ This project is about visualising and annotating circular mtDNA genomes.
  	+ Why is that data important?
 	+ How to get the data
 
-I have recieved support from the Wellcome Centre for Mitochondrial Research, based at Newcastle University.
+## Acknowledgements
+This project was funded by the [Wellcome Trust](https://wellcome.ac.uk/), through the [Wellcome Centre for Mitochondrial Research](https://www.newcastle-mitochondria.com/) at [Newcastle University](https://www.ncl.ac.uk/).
+
+<img src="images/logos/wellcome-logo-black.png" height=100, style="padding: 0 50px;">
+
+<img src="images/logos/Newcastle.png" height=100>
