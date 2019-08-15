@@ -1,13 +1,6 @@
 
 articles/images/Thumbs.db
 images/Thumbs.db
-<<<<<<< HEAD
-circos_tutorial/1_Quick_Start/Thumbs.db
-circos_tutorial/1_Quick_Start/tutorial_1/Thumbs.db
-=======
-circos_tutorial/1_Quick_Start/circos.png
-circos_tutorial/1_Quick_Start/circos.svg
->>>>>>> 3941516b4f0bc39587891c4987657b4aeb3d265c
 circos_tutorial/1_Quick_Start/tutorial_3/Thumbs.db
 images/base_plots/Thumbs.db
 code/circos_tutorial/tutorials/1/5/Thumbs.db
@@ -31,6 +24,7 @@ images/circos/Thumbs.db
 code/circos_tutorial/tutorials/6/4/Thumbs.db
 code/circos_tutorial/tutorials/6/Thumbs.db
 *.pyc
-*.pyc
-*.pyc
+__pycache__
+code/__pycache__/*.pyc
+
 images/logos/Thumbs.db
