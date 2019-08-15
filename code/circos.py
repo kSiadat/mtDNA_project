@@ -5,22 +5,40 @@ import os
 
 def create_ideogram(radius=0.6, thickness=0.075):
     conf_ideogram = f"""
-    <ideogram>
-        <spacing>
-            default = 0r
-        </spacing>
+        <ideogram>
+            <spacing>
+                default = 0r
+            </spacing>
 
-        show_bands            = yes
-        fill_bands            = yes
-        band_stroke_thickness = 2p
-        ban_stroke_colour     = black
+            show_bands            = yes
+            fill_bands            = yes
+            band_stroke_thickness = 2p
+            ban_stroke_colour     = black
 
-        radius           = {radius}r
-        thickness        = {thickness}r
-        fill             = yes
-        stroke_color     = black
-        stroke_thickness = 0p
-    </ideogram>
+            radius           = {radius}r
+            thickness        = {thickness}r
+            fill             = yes
+            stroke_color     = black
+            stroke_thickness = 2p
+        </ideogram>
+    """
+    """
+        <ideogram>
+            <spacing>
+                default = 0r
+            </spacing>
+
+            show_bands            = yes
+            fill_bands            = yes
+            band_stroke_thickness = 2p
+            ban_stroke_colour     = black
+
+            radius           = {radius-thickness-0.1}r
+            thickness        = {thickness}r
+            fill             = yes
+            stroke_color     = black
+            stroke_thickness = 2p
+        </ideogram>
     """
     return conf_ideogram
 
@@ -93,9 +111,9 @@ def create_plots(data):
     return conf_plots
 
 
-#accession = "NC_012920.1" # Human reference sequence
+accession = "NC_012920.1" # Human reference sequence
 #accession = "NC_005089.1" # Mouse reference sequence
-accession = "NC_027264.1" # Baker's yeast (Saccharomyces cerevisiae) reference sequence
+#accession = "NC_027264.1" # Baker's yeast (Saccharomyces cerevisiae) reference sequence
 
 path = "../data/temp/"
 
@@ -128,4 +146,4 @@ chromosomes_units = 1000000
 """
 
 write_file("circos.conf", main)
-os.system("circos -conf circos.conf -noparanoid")
+#os.system("circos -conf circos.conf -noparanoid")

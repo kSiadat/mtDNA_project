@@ -26,10 +26,15 @@ def extract_genes(accession, text, genomeLength, desired = ["gene", "rRNA", "tRN
 
 def write_karyotype(accession, path, data, genomeLength,  colours = ["dred", "vdgreen", "lblue", "lgrey"]):
     '''Creates a karyotype file for circos'''
-    text = f"chr - mt1 MT 0 {genomeLength-1} white\n"
+    strandInner = f"chr - mt1 MT 0 {genomeLength-1} white\n"
+    strandOuter = strandInner
     for d, D in enumerate(data):
-        text += f"band mt1 gn{d+1} {D[0]} {D[1]} {D[2]} {colours[D[3]]}\n"
-    write_file(f"{path}karyotype.{accession}.txt", text)
+        if D[4] == "+":
+            strandOuter += f"band mt1 gn{d+1} {D[0]} {D[1]} {D[2]} {colours[D[3]]}\n"
+        else:
+            strandInner += f"mt1 {D[1]} {D[2]} color={colours[D[3]]}\n"
+    write_file(f"{path}karyotype.{accession}.+.txt", strandOuter)
+    write_file(f"{path}keryotype.{accession}.-.txt", strandInner)
 
 
 def write_band_labels(accession, path, data, genomeLength):
@@ -52,6 +57,8 @@ def get_gene_data(accession, path):
     text = get_gff(accession)
 
     data = extract_genes(accession, text, genomeLength)
+    for D in data:
+        print(D)
     print("Extracted gene data")
     write_karyotype(accession, path, data, genomeLength)
     print("Created karyotype file")
