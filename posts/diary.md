@@ -115,4 +115,7 @@ Today I have been working on going through all of the code and improving it, the
 ### 2019-08-13
 This morning I finished improving the existing code. I then deleted all the contents of the data and image folders and remade them using the new improved code.
 
-Have created a python file that takes some inputs and creates a circos configuration file. It still needs some improvement though.
+Have created a python file that takes some inputs and creates a circos configuration file. It still needs some improvement though. It now also generates an image as well as creating all of the data files for you, so the whole process can be completed using 1 program.
+
+### 2019-09-15
+Have fixed an error where a circos diagram couldn't be drawn, by going in to the circos settings and increasing the maximum amount of data points allowed in a plot.
