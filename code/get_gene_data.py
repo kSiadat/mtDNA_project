@@ -45,17 +45,25 @@ def write_karyotype(accession, path, data, genomeLength,  colours = ["dred", "vd
 
 def write_band_labels(accession, path, data, genomeLength):
     '''Creates a file that allows circos to draw gene labels'''
-    text = ""
+    strandOuter = ""
+    strandInner = ""
     for d, D in enumerate(data):
         if data[d][0] != data[d-1][0]:
             if data[d][0] == data[(d+1)%len(data)][0]:
                 centre = (int(data[d][1]) + int(data[d+1][2]) + genomeLength) // 2
                 if centre >= genomeLength:
                     centre -= genomeLength
-                text += f"mt1 {centre} {centre} {D[0]}\n"
+                if D[4] == "+":
+                    strandOuter += f"mt1 {centre} {centre} {D[0]}\n"
+                else:
+                    strandInner += f"mt1 {centre} {centre} {D[0]}\n"
             else:
-                text += f"mt1 {D[1]} {D[2]} {D[0]}\n"
-    write_file(f"{path}karyotype.{accession}.band_labels.txt", text)
+                if D[4] == "+":
+                    strandOuter += f"mt1 {D[1]} {D[2]} {D[0]}\n"
+                else:
+                    strandInner += f"mt1 {D[1]} {D[2]} {D[0]}\n"
+    write_file(f"{path}karyotype.{accession}.+.band_labels.txt", strandOuter)
+    write_file(f"{path}karyotype.{accession}.-.band_labels.txt", strandInner)
 
 
 def get_gene_data(accession, path):
