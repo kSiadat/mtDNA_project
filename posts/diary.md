@@ -120,4 +120,4 @@ Have created a python file that takes some inputs and creates a circos configura
 ### 2019-09-15
 Have fixed an error where a circos diagram couldn't be drawn, by going in to the circos settings and increasing the maximum amount of data points allowed in a plot.
 
-I have successfully used a circos feature called tiles to create 2 seperate strands, I am now just refining the appearence so it looks good.
+I have successfully used a circos feature called tiles to create 2 seperate strands, I am now just refining the appearence so it looks good. I have finally made the inner strand look ok, although 1 of the tRNAs has dissappeared, and it still needs labels.
