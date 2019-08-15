@@ -33,6 +33,11 @@ def download(path, url):
     delete(path)
     wget.download(path, url)
 
+def empty_folder(path):
+    '''Deletes the whole contents of a folder'''
+    for file in os.listdir(path):
+        os.remove(f"{path}/{file}")
+
 def get_webData(url, html=False):
     '''Gets the text from a url'''
     text = request.urlopen(url).read()

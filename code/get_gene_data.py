@@ -40,7 +40,6 @@ def write_karyotype(accession, path, data, genomeLength,  colours = ["dred", "vd
     if int(data[-1][1])==0 and data[-1][4]=="-" and int(data[0][1])>int(data[-1][2])+1:
         strandInner += f"mt1 {data[-1][2]+1} {data[0][1]-1} color=white\n"
     write_file(f"{path}karyotype.{accession}.+.txt", strandOuter)
-    print(strandInner)
     write_file(f"{path}karyotype.{accession}.-.txt", strandInner)
 
 

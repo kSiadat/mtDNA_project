@@ -1,4 +1,4 @@
-from mtdna_utilities import write_file
+from mtdna_utilities import empty_folder, write_file
 from create_line_plot_data import create_linePlot_data
 from get_gene_data import get_gene_data
 import os
@@ -166,3 +166,4 @@ chromosomes_units = 1000000
 
 write_file("circos.conf", main)
 os.system("circos -conf circos.conf -noparanoid")
+empty_folder(path)
