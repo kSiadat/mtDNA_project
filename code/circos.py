@@ -106,6 +106,23 @@ def create_plots(data):
             """
             if D[7]!=None:
                 conf_plots += f"{create_axes(D[7])}\n"
+
+        if D[0] == "tile":
+            thickness = D[3]/D[2]
+            #print(0.95 - (2*D[3]/D[2]))
+            #print(0.95 - (D[3]/D[2]))
+            conf_plots += f"""
+            file       = {D[1]}
+            r0         = {0.97-(2*thickness)}r
+            r1         = {0.97-thickness}r
+            orientaion = out
+            layers     = 1
+            margin     = 0b
+            thickness  = {thickness*1000}
+            padding    = 0
+            stroke_thickness = 2p
+            stroke_color     = black
+            """
         conf_plots += "</plot>\n"
     conf_plots += "</plots>\n"
     return conf_plots
@@ -116,12 +133,14 @@ accession = "NC_012920.1" # Human reference sequence
 #accession = "NC_027264.1" # Baker's yeast (Saccharomyces cerevisiae) reference sequence
 
 path = "../data/temp/"
+ideoDims = [0.6, 0.075]
 
-conf_ideogram = create_ideogram(0.6, 0.075)
+conf_ideogram = create_ideogram(ideoDims[0], ideoDims[1])
 conf_image = create_image("../images/circos", accession)
 
 get_gene_data(accession, path)
-plots = [["text", f"{path}karyotype.{accession}.band_labels.txt", 1, 1.2]]
+plots = [["text", f"{path}karyotype.{accession}.band_labels.txt", 1, 1.2],
+         ["tile", f"{path}karyotype.{accession}.-.txt", ideoDims[0], ideoDims[1]]]
 bases = ["A", "C", "G", "T"]
 colours = ["blue", "orange", "green", "red"]
 for x in range(len(bases)):
@@ -133,7 +152,7 @@ for x in range(len(bases)):
 conf_plots = create_plots(plots)
 
 main = f"""
-karyotype = {path}karyotype.{accession}.txt
+karyotype = {path}karyotype.{accession}.+.txt
 
 chromosomes_units = 1000000
 
@@ -146,4 +165,4 @@ chromosomes_units = 1000000
 """
 
 write_file("circos.conf", main)
-#os.system("circos -conf circos.conf -noparanoid")
+os.system("circos -conf circos.conf -noparanoid")
