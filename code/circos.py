@@ -160,8 +160,9 @@ def create_plots(data):
 
 
 #accession = "NC_012920.1" # Human reference sequence
-accession = "NC_005089.1" # Mouse reference sequence
+#accession = "NC_005089.1" # Mouse reference sequence
 #accession = "NC_027264.1" # Baker's yeast (Saccharomyces cerevisiae) reference sequence
+accession = "NC_001224.1" # Another yeast
 
 path = "../data/temp/"
 ideoDims = [0.6, 0.075]
