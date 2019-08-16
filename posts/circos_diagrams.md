@@ -15,7 +15,7 @@ The images are in png format, however you can also get [svg images](../images/ci
 [svg image](../images/circos/NC_005089.1.svg)
 <img src="../images/circos/NC_005089.1.png" alt="NC_005089.1">
 
-## Baker's yeast:
+## Yeast:
 [svg image](../images/circos/NC_027264.1.svg)
 <img src="../images/circos/NC_027264.1.png" alt="NC_027264.1">
 
