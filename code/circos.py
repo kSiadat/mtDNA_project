@@ -213,5 +213,5 @@ chromosomes_units = 1000
 """
 
 write_file("circos.conf", main)
-os.system("circos -conf circos.conf -noparanoid")
-empty_folder(path)
+#os.system("circos -conf circos.conf -noparanoid")
+#empty_folder(path)
