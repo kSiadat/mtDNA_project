@@ -5,6 +5,8 @@ In order to create the diagrams you have to pass some parameters to a program I 
 
 There are 3 different species I have used here: Human, Mouse, and Baker's yeast. Which have accession numbers NC_012920.1, NC_005089.1, NC_027264.1, respectivley.
 
+The images may take a while to load because they are in svg format, you can find [png images](../images/circos) if you need. But because they are in svg format you can zoom in on sections without losing image quality.
+
 Human:
 <img src="../images/circos/NC_012920.1.svg" alt="Human genome">
 
