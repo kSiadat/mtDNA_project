@@ -10,17 +10,28 @@ def extract_genes(accession, text, genomeLength, desired = ["gene", "rRNA", "tRN
     text = [line.split("\\t") for line in text]
     text = [line for line in text if line[2] in desired]
 
-    data = [[line[8][line[8].index("-")+1:line[8].index(";")], line[3], line[4], desired.index(line[2]), line[6]] for line in text]
+    data = [["", line[3], line[4], desired.index(line[2]), line[6]] for line in text]
+    for d in range(len(data)):
+        for t in range(len(text[d][8])):
+            if text[d][8][t:t+6] == ";Name=":
+                data[d][0] = text[d][8][t+6:t+6+text[d][8][t+6:].index(";")]
     for d in range(len(text)):
         if text[d][2] == "D_loop":
             data[d][0] = "D-loop"
+    for d in range(len(data)):
+        if data[d-1][1]==data[d][1] and data[d-1][2]==data[d][2]:
+            data[d][0] = data[d-1][0]
+
     data = [data[d] for d in range(len(data)) if data[d][0]!=data[(d+1)%len(data)][0]]
+    data = [data[d] for d in range(len(data)) if data[d][0]!=""]
 
     if int(data[-1][2]) >= genomeLength:
         data.append(data[-1][:])
         data[-1][1] = 0
         data[-1][2] = str(int(data[-1][2]) - genomeLength + 1)
         data[-2][2] = str(genomeLength-1)
+    for D in data:
+        print(D)
     return data
 
 
@@ -87,6 +98,6 @@ def get_gene_data(accession, path):
 
 
 if __name__ == "__main__":
-    accession = "NC_012920.1"
+    accession = "NC_001224.1"
     path = "../data/temp/"
     get_gene_data(accession, path)

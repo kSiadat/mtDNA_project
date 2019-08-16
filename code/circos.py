@@ -1,4 +1,4 @@
-from mtdna_utilities import empty_folder, write_file
+from mtdna_utilities import empty_folder, get_genome, write_file
 from create_line_plot_data import create_linePlot_data
 from get_gene_data import get_gene_data
 import os
@@ -64,7 +64,7 @@ def create_axes(data):
         return conf_axes
 
 
-def create_ticks(radius, orientation):
+def create_ticks(radius, orientation, label_interval):
     if not radius[-1].isalpha():
         radius += "r"
     return f"""
@@ -86,6 +86,11 @@ def create_ticks(radius, orientation):
 
     <tick>
     spacing        = 1u
+    size           = 20p
+    </tick>
+
+    <tick>
+    spacing        = {label_interval}u
     size           = 20p
     show_label     = yes
     label_size     = 20p
@@ -167,13 +172,17 @@ accession = "NC_001224.1" # Another yeast
 path = "../data/temp/"
 ideoDims = [0.6, 0.075]
 thickness = ideoDims[1]/ideoDims[0]
+genomeLength = len(get_genome(accession))
 
 conf_ideogram = create_ideogram(ideoDims[0], ideoDims[1])
 conf_image = create_image("../images/circos", accession)
 conf_plots = ""
 conf_ticks = ""
 
-conf_ticks = create_ticks(f"{1-thickness}r+10p", "out")
+if genomeLength < 30000:
+    conf_ticks = create_ticks(f"{1-thickness}r+10p", "out", 1)
+else:
+    conf_ticks = create_ticks(f"{1-thickness}r+10p", "out", 5)
 
 get_gene_data(accession, path)
 plots = [["text", f"{path}karyotype.{accession}.+.band_labels.txt", 1, 1.25, "yes"],
