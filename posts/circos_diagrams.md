@@ -8,15 +8,15 @@ There are 3 different species I have used here: human, mouse, and yeast. Which h
 The images are in png format, however you can also get [svg images](../images/circos) if you want a vector graphics image, (the quality won't reduce if you zoom in).
 
 ## Human:
-[svg](../images/circos/NC_012920.1.svg)
+[svg image](../images/circos/NC_012920.1.svg)
 <img src="../images/circos/NC_012920.1.png" alt="NC_012920.1">
 
 ## Mouse:
-[svg](../images/circos/NC_005089.1.svg)
+[svg image](../images/circos/NC_005089.1.svg)
 <img src="../images/circos/NC_005089.1.png" alt="NC_005089.1">
 
 ## Baker's yeast:
-[svg](../images/circos/NC_027264.1.svg)
+[svg image](../images/circos/NC_027264.1.svg)
 <img src="../images/circos/NC_027264.1.png" alt="NC_027264.1">
 
 In the diagrams the inner circle section is the - strand, and the outer circle section is the + strand.
