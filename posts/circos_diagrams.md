@@ -21,3 +21,5 @@ In the diagrams the inner circle section is the - strand, and the outer circle s
 The different colours represent different genes, where genes that code for proteins are red, rRNAs are green, tRNAs are blue, the D-loop is grey, and the rest of the genome is white. All of the interesting genomic sections are also labelled.
 
 Around the edge of the chromosome are [nucleobase proportion plots](mitochondrial_genome_plots.md) which use a window size of 100.
+
+Unfortunately Circos doen't yet have a way to orientate labels outwards, so the - strand labels might seem a bit strange.
