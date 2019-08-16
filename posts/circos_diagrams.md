@@ -8,13 +8,13 @@ There are 3 different species I have used here: Human, Mouse, and Baker's yeast.
 The images may take a while to load because they are in svg format, you can find [png images](../images/circos) if you need. But because they are in svg format you can zoom in on sections without losing image quality.
 
 Human:
-<img src="../images/circos/NC_012920.1.svg" alt="Human genome">
+<img src="../images/circos/NC_012920.1.svg" alt="NC_012920.1">
 
 Mouse:
-<img src="../images/circos/NC_005089.1.svg" alt="Human genome">
+<img src="../images/circos/NC_005089.1.svg" alt="NC_005089.1">
 
 Baker's yeast:
-<img src="../images/circos/NC_027264.1.svg" alt="Human genome">
+<img src="../images/circos/NC_027264.1.svg" alt="NC_027264.1">
 
 In the diagrams the inner circle section is the - strand, and the outer circle section is the + strand.
 
