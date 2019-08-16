@@ -1,0 +1,2 @@
+mt1 768 70006 color=white
+mt1 70007 70080 color=lblue

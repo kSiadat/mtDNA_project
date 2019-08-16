@@ -64,6 +64,40 @@ def create_axes(data):
         return conf_axes
 
 
+def create_ticks(radius, orientation):
+    if not radius[-1].isalpha():
+        radius += "r"
+    return f"""
+    show_ticks       = yes
+    show_tick_labels = yes
+    <ticks>
+    radius           = {radius}
+    orientation      = {orientation}
+    color            = black
+    thickness        = 2p
+
+    multiplier       = 1
+    format           = %d
+
+    <tick>
+    spacing        = 0.1u
+    size           = 10p
+    </tick>
+
+    <tick>
+    spacing        = 1u
+    size           = 20p
+    show_label     = yes
+    label_size     = 20p
+    label_offset   = 10p
+    label_parallel = yes
+    format         = %d
+    </tick>
+
+    </ticks>
+    """
+
+
 def create_plots(data):
     #Data in format [[type=text, file, r0, r1],  [type=line, file, r0, r1, min, max, color, axes, [accession, path, windows]]
     conf_plots = "<plots>\n"
@@ -74,12 +108,11 @@ def create_plots(data):
             file        = {D[1]}
             r0          = {D[2]}r
             r1          = {D[3]}r
-            label_orientation = {D[4]}
             label_font  = sans_serif
             color       = black
             label_size  = 40p
 
-    	    show_links     = yes
+    	    show_links     = {D[4]}
 	    link_color     = black
 	    link_dims      = 5p, 10p, 20p, 10p, 5p
 	    link_thickness = 3p
@@ -126,8 +159,8 @@ def create_plots(data):
     return conf_plots
 
 
-accession = "NC_012920.1" # Human reference sequence
-#accession = "NC_005089.1" # Mouse reference sequence
+#accession = "NC_012920.1" # Human reference sequence
+accession = "NC_005089.1" # Mouse reference sequence
 #accession = "NC_027264.1" # Baker's yeast (Saccharomyces cerevisiae) reference sequence
 
 path = "../data/temp/"
@@ -136,15 +169,19 @@ thickness = ideoDims[1]/ideoDims[0]
 
 conf_ideogram = create_ideogram(ideoDims[0], ideoDims[1])
 conf_image = create_image("../images/circos", accession)
+conf_plots = ""
+conf_ticks = ""
+
+conf_ticks = create_ticks(f"{1-thickness}r+10p", "out")
 
 get_gene_data(accession, path)
-plots = [["text", f"{path}karyotype.{accession}.+.band_labels.txt", 1, 1.2, "out"],
-         ["text", f"{path}karyotype.{accession}.-.band_labels.txt", 0.68-(2*thickness), 0.98-(2*thickness), "in"],
-         ["tile", f"{path}karyotype.{accession}.-.txt", 0.98-(2*thickness), 0.98-(thickness)]]
+plots = [["text", f"{path}karyotype.{accession}.+.band_labels.txt", 1, 1.25, "yes"],
+         ["text", f"{path}karyotype.{accession}.-.band_labels.txt", 0.78-(2*thickness), 0.98-(2*thickness), "no"],
+         ["tile", f"{path}karyotype.{accession}.-.txt", 0.98-(2*thickness), 0.98-thickness]]
 bases = ["A", "C", "G", "T"]
 colours = ["blue", "orange", "green", "red"]
 for x in range(len(bases)):
-    temp = ["line", f"{path}{accession}_linePlot_100_{bases[x]}.txt", 1.22, 1.6, 0, 0.5, colours[x], None, None]
+    temp = ["line", f"{path}{accession}_linePlot_100_{bases[x]}.txt", 1.27, 1.65, 0, 0.5, colours[x], None, None]
     if x==0:
         temp[7] = [[0.1, "grey"], [0.5, "vdgrey"]]
         temp[8] = [accession, path, [100]]
@@ -154,11 +191,12 @@ conf_plots = create_plots(plots)
 main = f"""
 karyotype = {path}karyotype.{accession}.+.txt
 
-chromosomes_units = 1000000
+chromosomes_units = 1000
 
 {conf_ideogram}
 {conf_image}
 {conf_plots}
+{conf_ticks}
 
 <<include etc/colors_fonts_patterns.conf>> 
 <<include etc/housekeeping.conf>>
