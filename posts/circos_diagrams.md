@@ -5,3 +5,6 @@ In order to create the diagrams you have to pass some parameters to a program I 
 
 There are 3 different species I have used here: Human, Mouse, and Yeast. Which have accession numbers NC_012920.1, NC_005089.1, NC_027264.1, respectivley.
 
+<img src="../images/circos/NC_012920.1.svg" alt="Human genome">
+<img src="../images/circos/NC_005089.1.svg" alt="Human genome">
+<img src="../images/circos/NC_027264.1.svg" alt="Human genome">
