@@ -139,7 +139,7 @@ conf_image = create_image("../images/circos", accession)
 
 get_gene_data(accession, path)
 plots = [["text", f"{path}karyotype.{accession}.+.band_labels.txt", 1, 1.2, "out"],
-         ["text", f"{path}karyotype.{accession}.-.band_labels.txt", 0.78-(2*thickness), 0.98-(2*thickness), "in"],
+         ["text", f"{path}karyotype.{accession}.-.band_labels.txt", 0.68-(2*thickness), 0.98-(2*thickness), "in"],
          ["tile", f"{path}karyotype.{accession}.-.txt", 0.98-(2*thickness), 0.98-(thickness)]]
 bases = ["A", "C", "G", "T"]
 colours = ["blue", "orange", "green", "red"]
