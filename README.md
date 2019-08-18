@@ -2,7 +2,7 @@
 
 This project is about visualising and annotating circular mtDNA genomes.
 
-![Human mitochondrial genome](../images/circos/NC_012920.1.png)
+![Human mitochondrial genome](/images/circos/NC_012920.1.png)
 
 + [Introduction](posts/about_mtDNA.md)
 	+ What are mitochondria?
