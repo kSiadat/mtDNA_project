@@ -30,8 +30,6 @@ def extract_genes(accession, text, genomeLength, desired = ["gene", "rRNA", "tRN
         data[-1][1] = 0
         data[-1][2] = str(int(data[-1][2]) - genomeLength + 1)
         data[-2][2] = str(genomeLength-1)
-    for D in data:
-        print(D)
     return data
 
 

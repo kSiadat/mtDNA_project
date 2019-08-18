@@ -1,3 +1,0 @@
-mt1 1 78088 color=white
-mt1 78089 78162 color=lblue
-mt1 78163 85778 color=white
