@@ -24,3 +24,5 @@ In the diagrams the inner circle section is the - strand, and the outer circle s
 The different colours represent different genes, where genes that code for proteins are red, rRNAs are green, tRNAs are blue, the D-loop is grey, and the rest of the genome is white. All of the interesting genomic sections are also labelled.
 
 Around the edge of the chromosome are [nucleobase proportion plots](mitochondrial_genome_plots.md) which use a window size of 100.
+
+For each of these images I used exactly the same python program, the only difference is that I changed the accession number to use. This is 1 of the major benefits of doing this programmatically.
