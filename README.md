@@ -17,8 +17,8 @@ This project is about visualising and annotating circular mtDNA genomes.
  + [Obtaining data about the location of genes in the mitochondrial genome](posts/obtaining_gene_location_data.md)
  	+ Why is that data important?
 	+ How to get the data
- + [Circos diagrams](posts/circos_diagrams.md)
- 	+ A group of diagrams created in circos
+ + [mtDNA images](posts/mtdna_images.md)
+ 	+ A set of diagrams created using circos
 
 ## Acknowledgements
 This project was funded by the [Wellcome Trust](https://wellcome.ac.uk/), through the [Wellcome Centre for Mitochondrial Research](https://www.newcastle-mitochondria.com/) at [Newcastle University](https://www.ncl.ac.uk/).
