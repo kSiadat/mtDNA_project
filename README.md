@@ -13,6 +13,7 @@ This project is about visualising and annotating circular mtDNA genomes.
  	+ How do nucleobases vary a long the genome?
 	+ How does an actual genome compare to a random one in terms of bases?
 	+ Why would you compare them?
+	+ [How the code works](posts/code_nucleobase_plots.md)
 
  + [Obtaining data about the location of genes in the mitochondrial genome](posts/obtaining_gene_location_data.md)
  	+ Why is that data important?
