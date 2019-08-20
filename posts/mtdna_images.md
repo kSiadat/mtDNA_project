@@ -1,4 +1,4 @@
-# Circos diagrams
+# mtDNA images
 This post shows the diagrams that I have created using circos.
 
 In order to create the diagrams you have to pass some parameters to a program I wrote. There are several parameters that affect the features present and the layout of the diagram, however all of the data is accessed using just the accession number of the genome you want. This means that once you have created a style of diagram you like, it is easy to create images for lots of different species.
