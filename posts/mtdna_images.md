@@ -21,7 +21,7 @@ The images are in png format, however you can also get [svg images](../images/ci
 
 In the diagrams the inner circle section is the - strand, and the outer circle section is the + strand.
 
-The different colours represent different genes, where genes that code for proteins are red, rRNAs are green, tRNAs are blue, the D-loop is grey, and the rest of the genome is white. All of the interesting genomic sections are also labelled.
+The different colours represent different genes, where [genes](https://en.wikipedia.org/wiki/Gene) that code for proteins are red, [rRNAs](https://en.wikipedia.org/wiki/Ribosomal_RNA) are green, [tRNAs](https://en.wikipedia.org/wiki/Transfer_RNA) are blue, the [D-loop](https://en.wikipedia.org/wiki/D-loop) is grey, and the rest of the genome is white. All of the interesting genomic sections are also labelled.
 
 Around the edge of the chromosome are [nucleobase proportion plots](mitochondrial_genome_plots.md) which use a window size of 100.
 
