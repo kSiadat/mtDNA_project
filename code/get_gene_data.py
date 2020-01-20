@@ -96,6 +96,8 @@ def get_gene_data(accession, path):
 
 
 if __name__ == "__main__":
-    accession = "NC_001224.1"
+    accession = "NC_012920.1"
     path = "../data/temp/"
-    get_gene_data(accession, path)
+    gnome = get_genome(accession)
+    genomeLength = len(gnome)
+    gff = extract_genes(accession, get_gff(accession), genomeLength)
