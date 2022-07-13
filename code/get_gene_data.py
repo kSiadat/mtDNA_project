@@ -101,3 +101,7 @@ if __name__ == "__main__":
     gnome = get_genome(accession)
     genomeLength = len(gnome)
     gff = extract_genes(accession, get_gff(accession), genomeLength)
+    import pandas as pd
+    gffdf = pd.DataFrame(gff,columns=["Gene","Start","End","Type","Strand"])
+    gffdf.to_csv("GFF.CSV",index=False)
+    

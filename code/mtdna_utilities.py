@@ -47,7 +47,7 @@ def get_webData(url, html=False):
 
 def get_genome(accession):
     '''Gets text using a url then returns the genome as a string'''
-    return "".join(str(get_webData(f"https://www.ncbi.nlm.nih.gov/search/api/sequence/{accession}")).split("\\r\\n")[1:])[:-1]
+    return "".join(str(get_webData(f"https://www.ncbi.nlm.nih.gov/nuccore/{accession}")).split("\\r\\n")[1:])[:-1]
 
 def get_gff(accession):
     '''Gets a raw gff file in text'''
